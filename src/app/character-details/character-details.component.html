@@ -1,5 +1,5 @@
-<div class="row col-xs-12">
-  <div class="text-center">
+<div class="col-xs-12">
+  <div class="text-center row">
     <h3 *ngIf="loading">
       Recherche du personnage en cours
     </h3>
@@ -10,11 +10,17 @@
   </div>
 
   <span *ngIf="personnage">
-    <div class="col-xs-1">
-      <img src="https://render-eu.worldofwarcraft.com/character/{{personnage.thumbnail}}"  alt="Feels bad man"/>
-    </div>
-    <div class="col-xs-11">
-      Détail personnage : {{personnage.name}}
+    <div class="col-xs-12 panel panel-default">
+      <div class="col-xs-3 col-sm-2">
+        <a href="#" class="thumbnail">
+          <img src="https://render-eu.worldofwarcraft.com/character/{{personnage.thumbnail}}"  alt="Avatar"/>
+        </a>
+      </div>
+      <div class="col-xs-9 col-sm-10">
+        <div class="panel-body">
+          Détail personnage : {{personnage.name}}
+        </div>
+      </div>
     </div>
   </span>
 </div>
