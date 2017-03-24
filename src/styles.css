@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+/* CUSTOM */
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+/* COLORS */
+.red-bold {
+  color: red;
+  font-weight: bold;
+}
+
+/* MARGINS */
+.mtop20 {
+  margin-top: 20px;
+}
+
+/* OVERRIDE BOOTSTRAP */
+.row{
+  margin-bottom: 10px
+}
+
+/* OVERRIDE ANGULAR2 */
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}

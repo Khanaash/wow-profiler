@@ -1,0 +1,22 @@
+<div class="row col-xs-12">
+  <div class="text-center">
+    <h3 *ngIf="loading">
+      Recherche du personnage en cours
+    </h3>
+    <span *ngIf="erreurApparue">
+      <h4>Le personnage {{inNomPersonnage}} n'a pas été trouvé sur le serveur {{inNomServeur}}.</h4>
+      <button routerLink="/" type="button" class="btn btn-primary">Retour sur la recherche</button>
+    </span>
+  </div>
+
+  <span *ngIf="personnage">
+    <div class="col-xs-1">
+      <img src="https://render-eu.worldofwarcraft.com/character/{{personnage.thumbnail}}"  alt="Feels bad man"/>
+    </div>
+    <div class="col-xs-11">
+      Détail personnage : {{personnage.name}}
+    </div>
+  </span>
+</div>
+
+<router-outlet></router-outlet>

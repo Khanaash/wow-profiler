@@ -1,6 +1,6 @@
 import { ProjectTestPage } from './app.po';
 
-describe('project-test App', () => {
+describe('wow-profiler App', () => {
   let page: ProjectTestPage;
 
   beforeEach(() => {

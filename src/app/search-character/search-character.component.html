@@ -1,0 +1,34 @@
+<form #form="ngForm" (ngSubmit)="rechercher()">
+  <div class="form-group vertical-align mtop20">
+    <div class="col-xs-6">
+      <div class="col-xs-10 col-sm-8 col-xs-offset-2 col-sm-offset-4 pull-right ">
+        <!--<select required name="serveur" class="form-control" [(ngModel)]="selectedServeur">-->
+          <!--<option [value]="undefined" selected disabled>Nom du serveur</option>-->
+          <!--<option *ngFor="let serv of serveurs" [ngValue]="serv">{{serv.name}} - {{serv.battlegroup}} ({{serv.type}})</option>-->
+        <!--</select>-->
+
+        <select required name="serveur" class="form-control" [(ngModel)]="selectedServeur">
+          <option [value]="undefined" selected disabled>Nom du serveur</option>
+          <optgroup *ngFor="let paysServ of paysServeurs" label="{{paysServ.libelleAffichage}}">
+            <option *ngFor="let serv of getServeursParPays(paysServ)" [ngValue]="serv">{{serv.name}} - {{serv.battlegroup}} ({{serv.type}})</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="col-xs-10 col-sm-8 pull-left">
+        <input type="text" class="form-control" id="charName" placeholder="Nom du personnage"
+               [(ngModel)]="nomPersonnage" name="nomPersonnage" required #inspectorNomPersonnage="ngModel"/>
+      </div>
+      <div class="col-xs-2 col-sm-4" [hidden]="inspectorNomPersonnage.valid || inspectorNomPersonnage.pristine">
+        <span class="label label-danger">Obligatoire</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group vertical-align">
+    <div class="col-xs-12 text-center">
+      <button name="submitBtn" type="submit" class="btn btn-success" [disabled]="!form.form.valid">Rechercher</button>
+    </div>
+  </div>
+</form>
+
