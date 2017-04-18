@@ -1,0 +1,33 @@
+.card-character {
+}
+
+.card-character[class^=col-] {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.card-character-background {
+  background: url(/src/assets/character-details/background-warrior.png) repeat-x;
+  background-position: 50% 0px;
+  height: 300px;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+
+.card-character-foreground {
+  position: absolute;
+  top: 15px;
+  left:0;
+  right:0;
+  overflow: visible;
+}
+
+.card-character-name {
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: -1px -1px black, 1px 1px black;
+  color: white;
+}

@@ -8,21 +8,23 @@
       <button routerLink="/" type="button" class="btn btn-primary">Retour sur la recherche</button>
     </span>
   </div>
-
-  <span *ngIf="personnage">
-    <div class="col-xs-12 panel panel-default">
-      <div class="col-xs-3 col-sm-2">
-        <a href="#" class="thumbnail">
-          <img src="https://render-eu.worldofwarcraft.com/character/{{personnage.thumbnail}}"  alt="Avatar"/>
-        </a>
-      </div>
-      <div class="col-xs-9 col-sm-10">
-        <div class="panel-body">
-          Détail personnage : {{personnage.name}}
-        </div>
-      </div>
-    </div>
-  </span>
 </div>
 
-<router-outlet></router-outlet>
+<span *ngIf="personnage">
+  <div class="col-xs-12 card-character text-center">
+      <div class="card-character-background"></div>
+      <div class="card-character-foreground">
+        <div class="text-center">
+          <img src="https://render-eu.worldofwarcraft.com/character/{{personnage.imagePortrait}}"  alt="Avatar"/>
+        </div>
+        <div class="text-center card-character-name">
+          {{personnage.getNomAvecSelectedTitre()}}
+        </div>
+      </div>
+  </div>
+  <div class="col-xs-12">
+    <router-outlet></router-outlet>
+  </div>
+</span>
+
+

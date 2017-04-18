@@ -12,9 +12,11 @@ export class ServeurService {
   constructor(private http: Http) { }
 
   rechercherTous(): Observable<Serveur[]> {
-    let results: Observable<Serveur[]> = this.http
-      .get('https://eu.api.battle.net/wow/realm/status?locale=en_GB&apikey=' + environment.apikey)
-      .map(response => response.json().realms as Serveur[])
+    const results: Observable<Serveur[]> = this.http
+      .get('https://eu.api.battle.net/wow/realm/status?locale=fr_FR&apikey=' + environment.apikey)
+      .map(response => {
+        return response.json().realms.map(jsonServeur => new Serveur().deserialize(jsonServeur));
+      })
       .catch(error => {
         console.log(error);
         return Observable.of<Serveur[]>([]);

@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {SearchCharacterComponent} from "./search-character/search-character.component";
+import {SearchCharacterComponent} from './search-character/search-character.component';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 
 import { AppRouterModule } from '../modules-router/app-router.module';
-import {CharacterDetailsModule} from "./character-details/character-details.module";
+import {CharacterDetailsModule} from './character-details/character-details.module';
 
 @NgModule({
   declarations: [

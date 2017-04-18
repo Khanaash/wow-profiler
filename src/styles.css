@@ -1,38 +1,5 @@
-html,body{ height:100%}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
-}
-
-.footer div {
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -moz-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-}
-
-.footer p {
-  font-size: 11px;
-  margin-bottom: 0px;
+html,body{
+  height:100%;
 }
 
 /* CUSTOM */
@@ -53,6 +20,10 @@ body {
 }
 
 /* OVERRIDE BOOTSTRAP */
+.container-fluid, .container {
+  padding-left:0;
+  padding-right:0;
+}
 
 /* OVERRIDE ANGULAR2 */
 .ng-invalid:not(form)  {

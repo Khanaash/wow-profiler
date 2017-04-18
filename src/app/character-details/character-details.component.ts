@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params} from "@angular/router";
-import {Personnage} from "../../model/personnage";
-import {CharacterService} from "../../services/character.service";
-import {Observable} from "rxjs";
+import {ActivatedRoute, Params} from '@angular/router';
+import {Personnage} from '../../model/personnage';
+import {CharacterService} from '../../services/character.service';
 
 @Component({
   selector: 'app-character-details',
@@ -13,18 +12,18 @@ import {Observable} from "rxjs";
 export class CharacterDetailsComponent implements OnInit {
   public inNomServeur: string;
   public inNomPersonnage: string;
-  public personnage : Personnage;
-  public erreurApparue: boolean = false;
-  public loading: boolean = true;
+  public personnage: Personnage;
+  public erreurApparue = false;
+  public loading = true;
 
-  constructor(private route: ActivatedRoute, private characterService : CharacterService) { }
+  constructor(private route: ActivatedRoute, private characterService: CharacterService) { }
 
   ngOnInit() {
     this.route.params
       .switchMap((params: Params) => {
         this.inNomServeur = params['serverName'];
         this.inNomPersonnage = params['characterName'];
-        return this.characterService.rechercherPersonnage(this.inNomServeur, this.inNomPersonnage)
+        return this.characterService.rechercherPersonnage(this.inNomServeur, this.inNomPersonnage);
       })
       .take(1)
       .subscribe(

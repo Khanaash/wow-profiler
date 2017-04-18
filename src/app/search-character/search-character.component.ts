@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-import {Serveur} from "../../model/serveur";
-import {ServeurService} from "../../services/serveur.service";
-import {EnumPaysServeurUtils, EnumPaysServeur} from "./enum-pays-serveur";
+import {Router} from '@angular/router';
+import {Serveur} from '../../model/serveur';
+import {ServeurService} from '../../services/serveur.service';
+import {EnumPaysServeurUtils, EnumPaysServeur} from './enum-pays-serveur';
 
 import * as GlobalConstants from '../../global-consts';
 
@@ -33,22 +33,22 @@ export class SearchCharacterComponent implements OnInit {
   }
 
 
-  private buildPaysServeur() : void {
-    let paysServeurs : PaysServeur[] = [];
-    for (let serveur of this.serveurs) {
-      let locale :string = serveur.locale;
-      let valueEnum :EnumPaysServeur = EnumPaysServeurUtils.getValueEnum(locale);
+  private buildPaysServeur(): void {
+    const paysServeurs: PaysServeur[] = [];
+    for (const serveur of this.serveurs) {
+      const locale: string = serveur.locale;
+      const valueEnum: EnumPaysServeur = EnumPaysServeurUtils.getValueEnum(locale);
       if (valueEnum != null) {
         // Pays present dans enum
         if (!paysServeurs.find(object => object.locale.find(subObj => subObj === locale) != undefined)) {
-          let paysServeur : PaysServeur = new PaysServeur(locale, EnumPaysServeurUtils.getPaysAffichage(valueEnum));
+          const paysServeur: PaysServeur = new PaysServeur(locale, EnumPaysServeurUtils.getPaysAffichage(valueEnum));
           paysServeurs.push(paysServeur);
         }
       } else {
         // Pays autre
-        let paysServeurAutre = paysServeurs.find(object => object.libelleAffichage === 'Autres');
+        const paysServeurAutre = paysServeurs.find(object => object.libelleAffichage === 'Autres');
         if (!paysServeurAutre) {
-          let paysServeur : PaysServeur = new PaysServeur(locale, 'Autres');
+          const paysServeur: PaysServeur = new PaysServeur(locale, 'Autres');
           paysServeurs.push(paysServeur);
         } else {
           paysServeurAutre.locale.push(locale);
@@ -66,8 +66,8 @@ export class SearchCharacterComponent implements OnInit {
   }
 
   public getServeursParPays(paysServeur: PaysServeur) : Serveur[] {
-    let serveurs : Serveur[] = [];
-    for (let serveur of this.serveurs) {
+    const serveurs: Serveur[] = [];
+    for (const serveur of this.serveurs) {
       if (paysServeur.locale.find(obj => obj === serveur.locale)) {
         serveurs.push(serveur);
       }
@@ -75,8 +75,8 @@ export class SearchCharacterComponent implements OnInit {
     return serveurs;
   }
 
-  public rechercher() : void {
-    this.router.navigate([GlobalConstants.ROUTE_CHARACTER_DETAILS, this.selectedServeur.name, this.nomPersonnage]);
+  public rechercher(): void {
+    this.router.navigate([GlobalConstants.ROUTE_CHARACTER_DETAILS, this.selectedServeur.nom, this.nomPersonnage]);
   }
 }
 
