@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {CharacterDetailsComponent} from "../app/character-details/character-details.component";
-import {CharacterDetailsOverviewComponent} from "../app/character-details/character-details-overview/character-details-overview.component";
+import {CharacterDetailsComponent} from "app/character-details/character-details.component";
+import {CharacterDetailsOverviewComponent} from "app/character-details/character-details-overview/character-details-overview.component";
 
-import * as GlobalConstants from '../global-consts';
+import * as GlobalConstants from 'global-consts';
 
 const characterDetailRoutes: Routes = [
   { path: GlobalConstants.ROUTE_CHARACTER_DETAILS + '/:serverName/:characterName',

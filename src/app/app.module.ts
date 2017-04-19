@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-import {SearchCharacterComponent} from './search-character/search-character.component';
-import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
+import { AppComponent } from 'app/app.component';
+import {SearchCharacterComponent} from 'app/search-character/search-character.component';
+import { PageNotFoundComponentComponent } from 'app/page-not-found-component/page-not-found-component.component';
 
-import { AppRouterModule } from '../modules-router/app-router.module';
-import {CharacterDetailsModule} from './character-details/character-details.module';
+import { AppRouterModule } from 'app/_shared/modules/router/app-router.module';
+import {CharacterDetailsModule} from 'app/character-details/character-details.module';
 
 @NgModule({
   declarations: [
@@ -17,11 +17,11 @@ import {CharacterDetailsModule} from './character-details/character-details.modu
     PageNotFoundComponentComponent
   ],
   imports: [
-    // generic modules-router
+    // generic modules
     BrowserModule,
     FormsModule,
     HttpModule,
-    // custom modules-router
+    // custom modules
     CharacterDetailsModule,
     AppRouterModule
   ],

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 import {Personnage} from '../model/personnage';
 import {Observable} from 'rxjs';
-import {environment} from '../environments/environment';
+import {environment} from 'environments/environment';
 
 @Injectable()
 export class CharacterService {

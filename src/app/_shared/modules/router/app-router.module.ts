@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageNotFoundComponentComponent } from "../app/page-not-found-component/page-not-found-component.component";
-import { SearchCharacterComponent } from "../app/search-character/search-character.component";
+import { PageNotFoundComponentComponent } from "app/page-not-found-component/page-not-found-component.component";
+import { SearchCharacterComponent } from "app/search-character/search-character.component";
 
-import * as GlobalConstants from '../global-consts';
+import * as GlobalConstants from 'global-consts';
 
 const appRoutes: Routes = [
   { path: GlobalConstants.ROUTE_SEARCH_CHARACTER,

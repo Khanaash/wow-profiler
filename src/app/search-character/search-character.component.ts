@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {Serveur} from '../../model/serveur';
-import {ServeurService} from '../../services/serveur.service';
+import {Serveur} from 'app/_shared/model/serveur';
+import {ServeurService} from 'app/_shared/services/serveur.service';
 import {EnumPaysServeurUtils, EnumPaysServeur} from './enum-pays-serveur';
 
-import * as GlobalConstants from '../../global-consts';
+import * as GlobalConstants from 'global-consts';
 
 @Component({
   selector: 'app-search-character',

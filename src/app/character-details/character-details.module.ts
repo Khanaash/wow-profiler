@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CharacterDetailsComponent } from './character-details.component';
-import {CharacterDetailsRouterModule} from "../../modules-router/character-details-router.module";
+import {CharacterDetailsRouterModule} from "app/_shared/modules/router/character-details-router.module";
 import { CharacterDetailsOverviewComponent } from './character-details-overview/character-details-overview.component';
 
 @NgModule({

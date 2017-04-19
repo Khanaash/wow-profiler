@@ -4,7 +4,7 @@ import { Serveur }    from '../model/serveur';
 
 import 'rxjs/add/operator/map';
 import {Observable} from "rxjs";
-import {environment} from "../environments/environment.prod";
+import {environment} from "environments/environment.prod";
 
 @Injectable()
 export class ServeurService {
