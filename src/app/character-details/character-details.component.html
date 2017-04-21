@@ -12,12 +12,12 @@
 
 <span *ngIf="personnage">
   <div class="col-xs-12 card-character text-center">
-      <div class="card-character-background"></div>
+      <div class="card-character-background" [ngStyle]="{'background-image': 'url(/src/assets/character-details/' + personnage.classeInfos.cardBackgroundLocation + ')'}"></div>
       <div class="card-character-foreground">
         <div class="text-center">
-          <img src="https://render-eu.worldofwarcraft.com/character/{{personnage.imagePortrait}}"  alt="Avatar"/>
+          <img src="{{envVariableBaseUrlBlizzardRender}}/character/{{personnage.imagePortrait}}"  alt="Avatar"/>
         </div>
-        <div class="text-center card-character-name">
+        <div class="text-center card-character-name" [style.color]="personnage.classeInfos.colorCss">
           {{personnage.getNomAvecSelectedTitre()}}
         </div>
       </div>

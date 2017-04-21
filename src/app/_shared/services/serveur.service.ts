@@ -4,7 +4,7 @@ import { Serveur }    from '../model/serveur';
 
 import 'rxjs/add/operator/map';
 import {Observable} from "rxjs";
-import {environment} from "environments/environment.prod";
+import {environment} from "environments/environment";
 
 @Injectable()
 export class ServeurService {
@@ -13,7 +13,7 @@ export class ServeurService {
 
   rechercherTous(): Observable<Serveur[]> {
     const results: Observable<Serveur[]> = this.http
-      .get('https://eu.api.battle.net/wow/realm/status?locale=fr_FR&apikey=' + environment.apikey)
+      .get(environment.baseUrlBlizzardAPI + '/wow/realm/status?locale=fr_FR&apikey=' + environment.apikey)
       .map(response => {
         return response.json().realms.map(jsonServeur => new Serveur().deserialize(jsonServeur));
       })

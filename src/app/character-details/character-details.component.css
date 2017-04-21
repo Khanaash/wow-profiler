@@ -7,7 +7,7 @@
 }
 
 .card-character-background {
-  background: url(/src/assets/character-details/background-warrior.png) repeat-x;
+  background-repeat: repeat-x;
   background-position: 50% 0px;
   height: 300px;
   -webkit-filter: blur(2px);
@@ -28,6 +28,5 @@
 .card-character-name {
   font-size: 32px;
   font-weight: bold;
-  text-shadow: -1px -1px black, 1px 1px black;
   color: white;
 }

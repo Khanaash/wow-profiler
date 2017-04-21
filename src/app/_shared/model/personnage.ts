@@ -1,10 +1,10 @@
 import {Titre} from './titre';
 import {Statistiques} from "./statistiques";
+import {Classe, CLASSE_CONFIG} from "./classe";
 
 export class Personnage implements Serializable<Personnage> {
   /** Atributs **/
   nom: string;
-  class: number;
   faction: number;
   genre: number;
   derniereModification: number;
@@ -14,9 +14,9 @@ export class Personnage implements Serializable<Personnage> {
 
   titres: Titre[];
   statistiques: Statistiques;
+  classeInfos: Classe;
 
   deserialize(input): Personnage {
-    this.class = input.class;
     this.nom = input.name;
     this.faction = input.faction;
     this.genre = input.gender;
@@ -31,6 +31,7 @@ export class Personnage implements Serializable<Personnage> {
     }
 
     this.statistiques = new Statistiques().deserialize(input.stats);
+    this.classeInfos = CLASSE_CONFIG.find(val => input.class === val.numero);
 
     return this;
   }

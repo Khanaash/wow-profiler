@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Personnage} from 'app/_shared/model/personnage';
 import {CharacterService} from 'app/_shared/services/character.service';
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-character-details',
@@ -38,4 +39,7 @@ export class CharacterDetailsComponent implements OnInit {
       );
   }
 
+  get envVariableBaseUrlBlizzardRender(): string {
+    return environment.baseUrlBlizzardRender;
+  }
 }

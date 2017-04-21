@@ -11,7 +11,7 @@ export class CharacterService {
 
   rechercherPersonnage(nomServeur: string, nomPersonnage: string): Observable<Personnage> {
     const results: Observable<Personnage> = this.http
-      .get('https://eu.api.battle.net/wow/character/' + nomServeur + '/' + nomPersonnage
+      .get(environment.baseUrlBlizzardAPI + '/wow/character/' + nomServeur + '/' + nomPersonnage
           + '?fields=guild%2C+items%2C+professions%2C+progression%2C+pvp%2C+stats%2C+talents%2C+titles&locale=fr_FR&apikey='
           + environment.apikey)
       .map(response =>  {
