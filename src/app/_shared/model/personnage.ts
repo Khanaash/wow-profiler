@@ -1,6 +1,7 @@
 import {Titre} from './titre';
 import {Statistiques} from "./statistiques";
 import {Classe, CLASSE_CONFIG} from "./classe";
+import {Race, RACE_CONFIG} from "./race";
 
 export class Personnage implements Serializable<Personnage> {
   /** Atributs **/
@@ -8,9 +9,10 @@ export class Personnage implements Serializable<Personnage> {
   faction: number;
   genre: number;
   derniereModification: number;
-  race: number;
+  race: Race;
   imagePortrait: string;
   totalHonorableKills: number;
+  niveau: number;
 
   titres: Titre[];
   statistiques: Statistiques;
@@ -24,6 +26,7 @@ export class Personnage implements Serializable<Personnage> {
     this.race = input.race;
     this.imagePortrait = input.thumbnail;
     this.totalHonorableKills = input.totalHonorableKills;
+    this.niveau = input.level;
 
     this.titres = new Array<Titre>();
     for (const currentTitre of input.titles) {
@@ -31,7 +34,8 @@ export class Personnage implements Serializable<Personnage> {
     }
 
     this.statistiques = new Statistiques().deserialize(input.stats);
-    this.classeInfos = CLASSE_CONFIG.find(val => input.class === val.numero);
+    this.classeInfos = CLASSE_CONFIG.find(classe => input.class === classe.numero);
+    this.race = RACE_CONFIG.find(race => input.race === race.numero);
 
     return this;
   }
@@ -50,6 +54,10 @@ export class Personnage implements Serializable<Personnage> {
     return selectedTitre;
   }
 
+  private isFeminin(): boolean {
+    return this.genre === 1;
+  }
+
   /** Public Fonctions **/
   public getNomAvecSelectedTitre(): string {
     const selectedTitre = this.getSelectedTitre();
@@ -58,5 +66,17 @@ export class Personnage implements Serializable<Personnage> {
     } else {
       return name;
     }
+  }
+
+  public getClasseLibelle(): string {
+    return this.isFeminin() && typeof this.classeInfos.nomFemininAffichage !== 'undefined' ? this.classeInfos.nomFemininAffichage : this.classeInfos.nomAffichage;
+  }
+
+  public getRaceLibelle(): string {
+    return this.isFeminin() && typeof this.race.nomFemininAffichage !== 'undefined' ? this.race.nomFemininAffichage : this.race.nomAffichage;
+  }
+
+  public isHorde(): boolean {
+    return this.faction === 1;
   }
 }

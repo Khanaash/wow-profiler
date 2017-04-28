@@ -4,7 +4,8 @@ export const CLASSE_CONFIG: Classe[] = [
     code: 'WAR',
     colorCss: '#c69b6d',
     cardBackgroundLocation: 'background-warrior.jpg',
-    nomAffichage: 'Guerrier'
+    nomAffichage: 'Guerrier',
+    nomFemininAffichage: 'Guerriere'
   },
   {
     numero: 2,
@@ -18,21 +19,24 @@ export const CLASSE_CONFIG: Classe[] = [
     code: 'HUNT',
     colorCss: '#aad372',
     cardBackgroundLocation: 'background-hunt.jpg',
-    nomAffichage: 'Chasseur'
+    nomAffichage: 'Chasseur',
+    nomFemininAffichage: 'Chasseuse'
   },
   {
     numero: 4,
     code: 'ROGUE',
     colorCss: '#fff468',
     cardBackgroundLocation: 'background-voleur.jpg',
-    nomAffichage: 'Voleur'
+    nomAffichage: 'Voleur',
+    nomFemininAffichage: 'Voleuse'
   },
   {
     numero: 5,
     code: 'PRIEST',
     colorCss: '#f0ebe0',
     cardBackgroundLocation: 'background-pretre.jpg',
-    nomAffichage: 'Prêtre'
+    nomAffichage: 'Prêtre',
+    nomFemininAffichage: 'Prêtresse'
   },
   {
     numero: 6,
@@ -46,7 +50,8 @@ export const CLASSE_CONFIG: Classe[] = [
     code: 'SHAM',
     colorCss: '#2359ff',
     cardBackgroundLocation: 'background-shaman.jpg',
-    nomAffichage: 'Chaman'
+    nomAffichage: 'Chaman',
+    nomFemininAffichage: 'Chamane'
   },
   {
     numero: 8,
@@ -74,16 +79,18 @@ export const CLASSE_CONFIG: Classe[] = [
     code: 'DRUID',
     colorCss: '#ff7c0a',
     cardBackgroundLocation: 'background-druide.jpg',
-    nomAffichage: 'Druide'
+    nomAffichage: 'Druide',
+    nomFemininAffichage: 'Druidesse'
   },
   {
     numero: 12,
     code: 'DH',
     colorCss: '#a330c9',
     cardBackgroundLocation: 'background-dh.jpg',
-    nomAffichage: 'Chasseur de démons'
+    nomAffichage: 'Chasseur de démons',
+    nomFemininAffichage: 'Chasseuse de démons'
   }
-]
+];
 
 export class Classe  {
   numero: number;
@@ -91,4 +98,5 @@ export class Classe  {
   colorCss: string;
   cardBackgroundLocation: string;
   nomAffichage: string;
+  nomFemininAffichage?: string;
 }

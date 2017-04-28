@@ -11,14 +11,28 @@
 </div>
 
 <span *ngIf="personnage">
-  <div class="col-xs-12 card-character text-center">
+  <div class="col-xs-12 card-character">
       <div class="card-character-background" [ngStyle]="{'background-image': 'url(/src/assets/character-details/' + personnage.classeInfos.cardBackgroundLocation + ')'}"></div>
       <div class="card-character-foreground">
-        <div class="text-center">
-          <img src="{{envVariableBaseUrlBlizzardRender}}/character/{{personnage.imagePortrait}}"  alt="Avatar"/>
+        <div class="col-xs-9 card-character-summary">
+            <div class="card-character-avatar">
+              <img src="{{envVariableBaseUrlBlizzardRender}}/character/{{personnage.imagePortrait}}"  alt="Avatar"/>
+              <div class="badge-faction-et-niveau"
+                   [ngStyle]="{'background-image': 'url(/src/assets/' + (personnage.isHorde() ? 'horde-logo.png' : 'alliance-logo.png') + ')'}">
+                {{personnage.niveau}}
+              </div>
+            </div>
+            <div class="card-character-id">
+              <div class="card-character-name">
+                {{personnage.getNomAvecSelectedTitre()}}
+              </div>
+              <div [style.color]="personnage.classeInfos.colorCss">
+                {{personnage.getClasseLibelle()}} {{personnage.getRaceLibelle()}}
+              </div>
+            </div>
         </div>
-        <div class="text-center card-character-name" [style.color]="personnage.classeInfos.colorCss">
-          {{personnage.getNomAvecSelectedTitre()}}
+        <div class="col-xs-3">
+          <div class="pull-right">Ilvl</div>
         </div>
       </div>
   </div>

@@ -1,6 +1,3 @@
-.card-character {
-}
-
 .card-character[class^=col-] {
   padding-left: 0px;
   padding-right: 0px;
@@ -17,6 +14,17 @@
   filter: blur(2px);
 }
 
+.card-character-background:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0.4;
+}
+
 .card-character-foreground {
   position: absolute;
   top: 15px;
@@ -25,8 +33,51 @@
   overflow: visible;
 }
 
+.card-character-summary {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-character-avatar {
+  position: relative;
+  border: 1px black solid;
+  border-radius: 15%;
+  -moz-border-radius: 15%;
+}
+
+.card-character-avatar > img {
+  border-radius: inherit;
+}
+
+.card-character-id {
+  margin-left: 10px;
+}
+
 .card-character-name {
   font-size: 32px;
-  font-weight: bold;
   color: white;
+}
+
+.badge-faction-et-niveau {
+  /* background image & color */
+  background-size: 100%;
+  background-color: #363636;
+  /* taille et forme du badge */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 2px black solid;
+  /* position du badge */
+  position: absolute;
+  bottom: -15px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  /* styling du texte */
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 18px;
 }
