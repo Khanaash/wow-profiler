@@ -22,6 +22,7 @@ export class CharacterService {
         return personnage;
       })
       .catch(error => {
+        console.log(error);
         return Observable.throw(error); // observable needs to be returned or exception raised
       });
 

@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CharacterDetailsComponent } from './character-details.component';
 import {CharacterDetailsRouterModule} from "app/_shared/modules/router/character-details-router.module";
-import { CharacterDetailsOverviewComponent } from './character-details-overview/character-details-overview.component';
+import {ItemComponent} from "../item/item.component";
+import {EnteteTitreComponent} from "../utils/entete-titre/entete-titre.component";
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { CharacterDetailsOverviewComponent } from './character-details-overview/
   ],
   declarations: [
     CharacterDetailsComponent,
-    CharacterDetailsOverviewComponent
+    ItemComponent,
+    EnteteTitreComponent
   ]
 })
 export class CharacterDetailsModule { }

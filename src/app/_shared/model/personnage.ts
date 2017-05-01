@@ -2,6 +2,7 @@ import {Titre} from './titre';
 import {Statistiques} from "./statistiques";
 import {Classe, CLASSE_CONFIG} from "./classe";
 import {Race, RACE_CONFIG} from "./race";
+import {Items} from "./items";
 
 export class Personnage implements Serializable<Personnage> {
   /** Atributs **/
@@ -13,10 +14,12 @@ export class Personnage implements Serializable<Personnage> {
   imagePortrait: string;
   totalHonorableKills: number;
   niveau: number;
+  pointsHautFaits: number;
 
   titres: Titre[];
   statistiques: Statistiques;
   classeInfos: Classe;
+  items: Items;
 
   deserialize(input): Personnage {
     this.nom = input.name;
@@ -27,6 +30,7 @@ export class Personnage implements Serializable<Personnage> {
     this.imagePortrait = input.thumbnail;
     this.totalHonorableKills = input.totalHonorableKills;
     this.niveau = input.level;
+    this.pointsHautFaits = input.achievementPoints;
 
     this.titres = new Array<Titre>();
     for (const currentTitre of input.titles) {
@@ -36,6 +40,7 @@ export class Personnage implements Serializable<Personnage> {
     this.statistiques = new Statistiques().deserialize(input.stats);
     this.classeInfos = CLASSE_CONFIG.find(classe => input.class === classe.numero);
     this.race = RACE_CONFIG.find(race => input.race === race.numero);
+    this.items = new Items().deserialize(input.items);
 
     return this;
   }

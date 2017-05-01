@@ -15,11 +15,15 @@
       <div class="card-character-background" [ngStyle]="{'background-image': 'url(/src/assets/character-details/' + personnage.classeInfos.cardBackgroundLocation + ')'}"></div>
       <div class="card-character-foreground">
         <div class="col-xs-9 card-character-summary">
-            <div class="card-character-avatar">
-              <img src="{{envVariableBaseUrlBlizzardRender}}/character/{{personnage.imagePortrait}}"  alt="Avatar"/>
-              <div class="badge-faction-et-niveau"
-                   [ngStyle]="{'background-image': 'url(/src/assets/' + (personnage.isHorde() ? 'horde-logo.png' : 'alliance-logo.png') + ')'}">
-                {{personnage.niveau}}
+            <div>
+              <div class="card-character-avatar">
+                <img src="{{envVariableBaseUrlBlizzardRender}}/character/{{personnage.imagePortrait}}"  alt="Avatar"/>
+                <div class="badge-faction"
+                     [ngStyle]="{'background-image': 'url(/src/assets/' + (personnage.isHorde() ? 'horde-logo.png' : 'alliance-logo.png') + ')'}">
+                </div>
+                <div class="badge-niveau">
+                  {{personnage.niveau}}
+                </div>
               </div>
             </div>
             <div class="card-character-id">
@@ -31,13 +35,34 @@
               </div>
             </div>
         </div>
-        <div class="col-xs-3">
-          <div class="pull-right">Ilvl</div>
+        <div class="col-xs-3 card-character-main-infos">
+          <div class="pull-right card-character-main-infos-block">
+            <div class="card-character-main-infos-block-entete" [style.border-bottom-color]="personnage.classeInfos.colorCss">
+              Niveau moyen des objets équipés
+            </div>
+            <div class="card-character-main-infos-block-valeur" [style.color]="personnage.classeInfos.colorCss">
+              {{personnage.items.ilvlEquipe}} <span class="ilvl-global">(Niveau moyen global : {{personnage.items.ilvlMoyen}})</span>
+            </div>
+          </div>
+          <div class="pull-right card-character-main-infos-block">
+            <div class="card-character-main-infos-block-entete" [style.border-bottom-color]="personnage.classeInfos.colorCss">
+              <img src="/src/assets/achievements.gif"/>&nbsp;Hauts faits
+            </div>
+            <div class="card-character-main-infos-block-valeur" [style.color]="personnage.classeInfos.colorCss">
+              {{personnage.pointsHautFaits}}
+            </div>
+          </div>
         </div>
       </div>
   </div>
   <div class="col-xs-12">
-    <router-outlet></router-outlet>
+    <div class="col-xs-6 items">
+        <app-entete-titre [titre]="'Equipements'" [personnage]="personnage"></app-entete-titre>
+        <app-item *ngFor="let item of personnage.items.getAllItemsOrdonnes()" [item]="item"></app-item>
+    </div>
+    <div class="col-xs-6 stats">
+        <app-entete-titre [titre]="'Caracteristiques'" [personnage]="personnage"></app-entete-titre>
+    </div>
   </div>
 </span>
 

@@ -1,6 +1,7 @@
 .card-character[class^=col-] {
   padding-left: 0px;
   padding-right: 0px;
+  margin-bottom: 10px;
 }
 
 .card-character-background {
@@ -31,6 +32,7 @@
   left:0;
   right:0;
   overflow: visible;
+  color: white;
 }
 
 .card-character-summary {
@@ -58,26 +60,79 @@
   color: white;
 }
 
-.badge-faction-et-niveau {
+.badge-faction {
   /* background image & color */
   background-size: 100%;
   background-color: #363636;
   /* taille et forme du badge */
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   -moz-border-radius: 50%;
   border: 2px black solid;
   /* position du badge */
   position: absolute;
-  bottom: -15px;
+  left: -15px;
+  top: -15px;
   margin: 0 auto;
+}
+.badge-niveau {
+  /* background image & color */
+  background-size: 100%;
+  background-color: #363636;
+  /* taille et forme du badge */
+  width: 40px;
+  height: 20px;
+  line-height: 16px;
+  border-radius: 20%;
+  -moz-border-radius: 20%;
+  border: 2px black solid;
+  /* position du badge */
+  position: absolute;
   left: 0;
   right: 0;
+  bottom: -15px;
+  margin: 0 auto;
   /* styling du texte */
   color: white;
   text-align: center;
-  line-height: 50px;
   font-weight: bold;
-  font-size: 18px;
+}
+
+
+.card-character-main-infos {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+
+.card-character-main-infos div.card-character-main-infos-block:not(:first-child) {
+  margin-top: 10px;
+}
+
+.card-character-main-infos-block {
+}
+
+.card-character-main-infos-block-entete {
+  text-align: center;
+  border-bottom: rgba(100,100,100,0.5) 1px solid;
+}
+
+.card-character-main-infos-block-valeur {
+  font-size: 24px;
+  line-height: 26px;
+  height:26px;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(to right, rgba(0,0,0,0) 0, rgba(255,255,255,.2) 50%, rgba(0,0,0,0) 100%);
+  background: -webkit-linear-gradient(to right, rgba(0,0,0,0) 0, rgba(255,255,255,.2) 50%, rgba(0,0,0,0) 100%);
+  background: -moz-linear-gradient(to right ,rgba(0,0,0,0) 0, rgba(255,255,255,.2) 50%, rgba(0,0,0,0) 100%);
+  background: -o-linear-gradient(to right, rgba(0,0,0,0) 0, rgba(255,255,255,.2) 50%, rgba(0,0,0,0) 100%);
+}
+
+.ilvl-global {
+  color: #ccc;
+  font-size: 11px;
+  vertical-align: top;
+  font-weight: normal;
 }
