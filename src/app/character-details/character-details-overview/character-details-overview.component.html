@@ -1,0 +1,9 @@
+<div *ngIf="personnage">
+  <div class="col-xs-6">
+    <app-entete-titre [titre]="'Equipements'" [cssColor]="personnage.classeInfos.colorCss"></app-entete-titre>
+    <app-item *ngFor="let item of personnage.items.getAllItemsOrdonnes()" [item]="item"></app-item>
+  </div>
+  <div class="col-xs-6">
+    <app-entete-titre [titre]="'Caracteristiques'" [cssColor]="personnage.classeInfos.colorCss"></app-entete-titre>
+  </div>
+</div>

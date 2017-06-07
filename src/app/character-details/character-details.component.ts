@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
-import {Personnage} from 'app/_shared/model/personnage';
-import {CharacterService} from 'app/_shared/services/character.service';
-import {environment} from "../../environments/environment";
+import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute, Params} from "@angular/router";
+import {Personnage} from "app/_shared/model/personnage";
+import {CharacterService} from "app/_shared/services/character.service";
+import {PersonnageSharedService} from "app/_shared/services/personnage-shared.service";
 
 @Component({
   selector: 'app-character-details',
   templateUrl: './character-details.component.html',
   styleUrls: ['./character-details.component.css'],
-  providers: [CharacterService]
+  providers: []
 })
 export class CharacterDetailsComponent implements OnInit {
   public inNomServeur: string;
@@ -17,7 +17,7 @@ export class CharacterDetailsComponent implements OnInit {
   public erreurApparue = false;
   public loading = true;
 
-  constructor(private route: ActivatedRoute, private characterService: CharacterService) { }
+  constructor(private route: ActivatedRoute, private characterService: CharacterService, private personnageSharedService: PersonnageSharedService) { }
 
   ngOnInit() {
     this.route.params
@@ -28,7 +28,10 @@ export class CharacterDetailsComponent implements OnInit {
       })
       .take(1)
       .subscribe(
-        (data) => this.personnage = data,
+        (data) => {
+          this.personnage = data;
+          this.personnageSharedService.pushPersonnage(this.personnage);
+        },
         (err) => {
           this.erreurApparue = true;
           this.loading = false;
@@ -37,9 +40,5 @@ export class CharacterDetailsComponent implements OnInit {
           this.loading = false;
         }
       );
-  }
-
-  get envVariableBaseUrlBlizzardRender(): string {
-    return environment.baseUrlBlizzardRender;
   }
 }

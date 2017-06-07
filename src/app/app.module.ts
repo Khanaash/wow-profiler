@@ -9,6 +9,9 @@ import {PageNotFoundComponentComponent} from "app/page-not-found-component/page-
 
 import {AppRouterModule} from "app/_shared/modules/router/app-router.module";
 import {CharacterDetailsModule} from "app/character-details/character-details.module";
+import {CharacterService} from "app/_shared/services/character.service";
+import {ServeurService} from "app/_shared/services/serveur.service";
+import {PersonnageSharedService} from "app/_shared/services/personnage-shared.service";
 
 @NgModule({
   declarations: [
@@ -25,7 +28,11 @@ import {CharacterDetailsModule} from "app/character-details/character-details.mo
     CharacterDetailsModule,
     AppRouterModule
   ],
-  providers: [],
+  providers: [
+    CharacterService,
+    ServeurService,
+    PersonnageSharedService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

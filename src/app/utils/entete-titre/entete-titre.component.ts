@@ -8,7 +8,7 @@ import {Personnage} from "../../_shared/model/personnage";
 })
 export class EnteteTitreComponent implements OnInit {
   @Input('titre') titre: string;
-  @Input('personnage') personnage: Personnage;
+  @Input('cssColor') cssColor: String;
 
   constructor() { }
 

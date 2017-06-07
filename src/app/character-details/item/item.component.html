@@ -1,0 +1,19 @@
+<div class="item">
+  <div class="item-icon">
+    <img src="{{getIconItemUrl}}"  [alt]="item.typeSlot" [style.border-color]="item.qualite.colorCss"/>
+  </div>
+  <div class="item-info-primaire">
+    <div>
+      <span class="item-ilvl">
+        {{item.ilvl}}
+      </span>
+      -
+      <span class="item-type">
+        {{item.typeSlot}}
+      </span>
+    </div>
+    <span class="item-nom" [style.color]="item.qualite.colorCss">
+      {{item.nom}}
+    </span>
+  </div>
+</div>

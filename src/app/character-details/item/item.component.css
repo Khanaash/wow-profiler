@@ -1,0 +1,31 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 4px;
+}
+
+.item-icon {
+  width: 42px;
+}
+
+.item-icon > img {
+  border: 2px solid;
+}
+
+.item-info-primaire {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-type {
+  color: #000000;
+}
+
+.item-ilvl {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.item-nom {
+  font-weight: 600;
+}

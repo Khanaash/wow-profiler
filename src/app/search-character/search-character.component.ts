@@ -10,7 +10,7 @@ import * as GlobalConstants from 'global-consts';
   selector: 'app-search-character',
   templateUrl: './search-character.component.html',
   styleUrls: ['./search-character.component.css'],
-  providers: [ServeurService]
+  providers: []
 })
 export class SearchCharacterComponent implements OnInit {
   public serveurs: Serveur[];
