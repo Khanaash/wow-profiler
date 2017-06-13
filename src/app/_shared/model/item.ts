@@ -13,6 +13,8 @@ export class Item implements Serializable<Item> {
   gemme2Id: number;
   gemme3Id: number;
   nomIcon: string;
+  emptyItem = false;
+  decalageHeightEmptyIcon: number;
 
   deserialize(input: any): Item {
     if (input) {
@@ -26,6 +28,8 @@ export class Item implements Serializable<Item> {
       this.gemme2Id = input.gem1;
       this.gemme3Id = input.gem2;
       this.nomIcon = input.icon;
+    } else {
+      this.emptyItem = true;
     }
 
     return this;

@@ -9,6 +9,7 @@ import {environment} from "environments/environment";
 })
 export class ItemComponent implements OnInit {
   @Input("item") item: Item;
+  @Input() alignerADroite = false;
 
   constructor() { }
 

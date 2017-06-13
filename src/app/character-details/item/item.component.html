@@ -1,19 +1,21 @@
-<div class="item">
-  <div class="item-icon">
-    <img src="{{getIconItemUrl}}"  [alt]="item.typeSlot" [style.border-color]="item.qualite.colorCss"/>
-  </div>
-  <div class="item-info-primaire">
-    <div>
-      <span class="item-ilvl">
-        {{item.ilvl}}
-      </span>
-      -
-      <span class="item-type">
-        {{item.typeSlot}}
+<div class="item" [ngClass]="{'item-right' : alignerADroite}">
+  <div *ngIf="item.emptyItem; else itemSlot" class="item-icon item-empty" [style.background-position]="'0 ' + item.decalageHeightEmptyIcon +'%'"
+       tooltip="{{item.typeSlot}} (vide)" placement="right"></div>
+  <ng-template #itemSlot>
+    <div class="item-icon" [style.background-image]="'url(' + getIconItemUrl + ')'" [style.border-color]="item.qualite.colorCss"></div>
+    <div class="item-info-primaire">
+      <div>
+        <span class="item-ilvl">
+          {{item.ilvl}}
+        </span>
+        <span>&nbsp;-&nbsp;</span>
+        <span class="item-type">
+          {{item.typeSlot}}
+        </span>
+      </div>
+      <span class="item-nom" [style.color]="item.qualite.colorCss">
+        {{item.nom}}
       </span>
     </div>
-    <span class="item-nom" [style.color]="item.qualite.colorCss">
-      {{item.nom}}
-    </span>
-  </div>
+  </ng-template>
 </div>

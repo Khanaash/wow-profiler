@@ -7,10 +7,12 @@ import {EnteteTitreComponent} from "app/utils/entete-titre/entete-titre.componen
 import {CharacterDetailsOverviewComponent} from "app/character-details/character-details-overview/character-details-overview.component";
 import {CharacterDetailsCardComponent} from "app/character-details/character-details-card/character-details-card.component";
 import {CharacterDetailsReputationsComponent} from "app/character-details/character-details-reputations/character-details-reputations.component";
+import {TooltipModule} from "ngx-bootstrap";
+import {ComponentUtilsModule} from "app/_shared/modules/component-utils.module";
 
 @NgModule({
   imports: [
-    CommonModule,
+    ComponentUtilsModule,
     CharacterDetailsRouterModule
   ],
   declarations: [

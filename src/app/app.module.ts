@@ -12,6 +12,7 @@ import {CharacterDetailsModule} from "app/character-details/character-details.mo
 import {CharacterService} from "app/_shared/services/character.service";
 import {ServeurService} from "app/_shared/services/serveur.service";
 import {PersonnageSharedService} from "app/_shared/services/personnage-shared.service";
+import {TooltipModule} from "ngx-bootstrap/tooltip";
 
 @NgModule({
   declarations: [

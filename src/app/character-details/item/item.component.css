@@ -4,17 +4,31 @@
   padding-bottom: 4px;
 }
 
-.item-icon {
-  width: 42px;
+.item-right {
+  flex-direction: row-reverse;
 }
 
-.item-icon > img {
+.item-icon {
+  width: 40px;
+  height: 40px;
   border: 2px solid;
+  background-size: cover;
 }
 
 .item-info-primaire {
   display: flex;
   flex-direction: column;
+  margin-left: 3px;
+}
+
+.item-right .item-info-primaire {
+  flex-direction: column;
+  margin-left: 0px;
+  margin-right: 3px;
+}
+
+.item-right .item-info-primaire span {
+  float: right;
 }
 
 .item-type {
@@ -28,4 +42,9 @@
 
 .item-nom {
   font-weight: 600;
+}
+
+.item-empty {
+  border-color: grey;
+  background-image: url("/src/assets/item-icons-empty.png");
 }
