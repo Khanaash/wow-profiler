@@ -5,7 +5,7 @@
 }
 
 .item-right {
-  flex-direction: row-reverse;
+  direction: rtl;
 }
 
 .item-icon {
@@ -22,7 +22,6 @@
 }
 
 .item-right .item-info-primaire {
-  flex-direction: column;
   margin-left: 0px;
   margin-right: 3px;
 }

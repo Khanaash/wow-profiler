@@ -1,6 +1,7 @@
 <div class="item" [ngClass]="{'item-right' : alignerADroite}">
   <div *ngIf="item.emptyItem; else itemSlot" class="item-icon item-empty" [style.background-position]="'0 ' + item.decalageHeightEmptyIcon +'%'"
-       tooltip="{{item.typeSlot}} (vide)" placement="right"></div>
+       tooltip="{{item.typeSlot}} (vide)" [placement]="alignerADroite ? 'left' : 'right'">
+  </div>
   <ng-template #itemSlot>
     <div class="item-icon" [style.background-image]="'url(' + getIconItemUrl + ')'" [style.border-color]="item.qualite.colorCss"></div>
     <div class="item-info-primaire">
