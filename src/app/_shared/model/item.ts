@@ -9,9 +9,8 @@ export class Item implements Serializable<Item> {
   /* Enchant/Gemmes/Transmog/ etc.. */
   enchantId: number;
   transmogItemId: number;
-  gemme1Id: number;
-  gemme2Id: number;
-  gemme3Id: number;
+  gemsList: number[];
+  bonusLists: number[]; // Pour wowhead
   nomIcon: string;
   emptyItem = false;
   decalageHeightEmptyIcon: number;
@@ -22,11 +21,19 @@ export class Item implements Serializable<Item> {
       this.nom = input.name;
       this.qualite = ITEM_RARITY_CONFIG.find(rarity => input.quality === rarity.numero);
       this.ilvl = input.itemLevel;
-      this.enchantId = input.enchant;
-      this.transmogItemId = input.transmogItem;
-      this.gemme1Id = input.gem0;
-      this.gemme2Id = input.gem1;
-      this.gemme3Id = input.gem2;
+      this.enchantId = input.tooltipParams.enchant;
+      this.transmogItemId = input.tooltipParams.transmogItem;
+      this.gemsList = [];
+      if (input.tooltipParams.gem0) {
+        this.gemsList.push(input.tooltipParams.gem0);
+      }
+      if (input.tooltipParams.gem1) {
+        this.gemsList.push(input.tooltipParams.gem1);
+      }
+      if (input.tooltipParams.gem2) {
+        this.gemsList.push(input.tooltipParams.gem2);
+      }
+      this.bonusLists = input.bonusLists;
       this.nomIcon = input.icon;
     } else {
       this.emptyItem = true;

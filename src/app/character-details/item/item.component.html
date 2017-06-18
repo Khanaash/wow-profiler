@@ -3,13 +3,14 @@
        tooltip="{{item.typeSlot}} (vide)" [placement]="alignerADroite ? 'left' : 'right'">
   </div>
   <ng-template #itemSlot>
-    <div class="item-icon" [style.background-image]="'url(' + getIconItemUrl + ')'" [style.border-color]="item.qualite.colorCss"></div>
+    <a [href]="getItemWowHeadUrlRelation()">
+      <div class="item-icon" [style.background-image]="'url(' + getIconItemUrl + ')'" [style.border-color]="item.qualite.colorCss"></div>
+    </a>
     <div class="item-info-primaire">
       <div>
         <span class="item-ilvl">
-          {{item.ilvl}}
+          {{item.ilvl}}&nbsp;-&nbsp;
         </span>
-        <span>&nbsp;-&nbsp;</span>
         <span class="item-type">
           {{item.typeSlot}}
         </span>

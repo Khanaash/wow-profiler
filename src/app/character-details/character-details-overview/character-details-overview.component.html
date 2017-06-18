@@ -1,6 +1,5 @@
 <div *ngIf="personnage">
   <div class="col-xs-12">
-    <app-entete-titre [titre]="'Equipements'" [cssColor]="personnage.classeInfos.colorCss"></app-entete-titre>
     <div class="col-xs-6">
       <app-item *ngFor="let item of personnage.items.getItemsGaucheOrdonnes()" [item]="item"></app-item>
     </div>

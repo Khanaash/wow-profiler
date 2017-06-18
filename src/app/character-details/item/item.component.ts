@@ -19,4 +19,21 @@ export class ItemComponent implements OnInit {
   get getIconItemUrl(): string {
     return `${environment.baseUrlBlizzardRenderIcons56Px}/${this.item.nomIcon}.jpg`;
   }
+
+  public getItemWowHeadUrlRelation(): string {
+    let urlWowHead = `http://www.wowhead.com/item=${this.item.id}&domain=fr`;
+    if (this.item.enchantId != null) {
+      urlWowHead = `${urlWowHead}&ench=${this.item.enchantId}`;
+    }
+    if (this.item.bonusLists != null && this.item.bonusLists.length > 0) {
+      urlWowHead = `${urlWowHead}&bonus=${this.item.bonusLists.join(':')}`;
+    }
+    if (this.item.gemsList != null && this.item.gemsList.length > 0) {
+      urlWowHead = `${urlWowHead}&gems=${this.item.gemsList.join(':')}`;
+    }
+    if (this.item.transmogItemId != null) {
+      urlWowHead = `${urlWowHead}&transmog=${this.item.transmogItemId}`;
+    }
+    return urlWowHead;
+  }
 }
