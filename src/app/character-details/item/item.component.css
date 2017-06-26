@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: row;
   padding-bottom: 4px;
+  font-size: 13px;
 }
 
-.item > a{
+.item a.wowheadTooltip {
   text-decoration: none;
   color: inherit;
 }
@@ -14,8 +15,8 @@
 }
 
 .item-icon {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border: 2px solid;
   background-size: cover;
 }
@@ -41,7 +42,7 @@
 
 .item-ilvl {
   font-style: italic;
-  font-weight: 600;
+  font-weight: 900;
 }
 
 .item-nom {

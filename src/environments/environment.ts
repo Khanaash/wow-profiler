@@ -8,5 +8,5 @@ export const environment = {
   apikey: 'upkh578ch2d4mexkm4s2j949rmm3a6zq',
   baseUrlBlizzardAPI: 'https://eu.api.battle.net',
   baseUrlBlizzardRender: 'https://render-eu.worldofwarcraft.com',
-  baseUrlBlizzardRenderIcons56Px: 'http://media.blizzard.com/wow/icons/36' // existe aussi en 56, 36 et 18
+  baseUrlBlizzardRenderIcons56Px: 'http://media.blizzard.com/wow/icons/56' // existe aussi en 56, 36 et 18
 };

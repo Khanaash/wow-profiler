@@ -11,8 +11,7 @@ import {AppRouterModule} from "app/_shared/modules/router/app-router.module";
 import {CharacterDetailsModule} from "app/character-details/character-details.module";
 import {CharacterService} from "app/_shared/services/character.service";
 import {ServeurService} from "app/_shared/services/serveur.service";
-import {PersonnageSharedService} from "app/_shared/services/personnage-shared.service";
-import {TooltipModule} from "ngx-bootstrap/tooltip";
+import {PersonnageResolver} from "app/character-details/personnage-resolver.service";
 
 @NgModule({
   declarations: [
@@ -32,7 +31,7 @@ import {TooltipModule} from "ngx-bootstrap/tooltip";
   providers: [
     CharacterService,
     ServeurService,
-    PersonnageSharedService
+    PersonnageResolver
   ],
   bootstrap: [AppComponent]
 })

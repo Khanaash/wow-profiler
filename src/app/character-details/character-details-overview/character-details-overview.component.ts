@@ -1,7 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Personnage} from "app/_shared/model/personnage";
-import {Params} from "@angular/router";
-import {PersonnageSharedService} from "app/_shared/services/personnage-shared.service";
+import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
   selector: 'app-character-details-overview',
@@ -11,10 +10,10 @@ import {PersonnageSharedService} from "app/_shared/services/personnage-shared.se
 export class CharacterDetailsOverviewComponent implements OnInit {
   public personnage: Personnage;
 
-  constructor(private personnageSharedService: PersonnageSharedService) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.personnageSharedService.getPersonnage().subscribe(res => this.personnage = res);
+      this.personnage = this.route.snapshot.data['personnage'];
   }
 
 }

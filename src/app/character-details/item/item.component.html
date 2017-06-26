@@ -3,10 +3,15 @@
        tooltip="{{item.typeSlot}} (vide)" [placement]="alignerADroite ? 'left' : 'right'">
   </div>
   <ng-template #itemSlot>
-    <a [href]="getItemWowHeadUrlRelation()">
+    <a class="wowheadTooltip" [href]="getItemWowHeadUrlRelation()">
       <div class="item-icon" [style.background-image]="'url(' + getIconItemUrl + ')'" [style.border-color]="item.qualite.colorCss"></div>
     </a>
     <div class="item-info-primaire">
+      <span class="item-nom" [style.color]="item.qualite.colorCss">
+        <a class="wowheadTooltip" [href]="getItemWowHeadUrlRelation()">
+          {{item.nom}}
+        </a>
+      </span>
       <div>
         <span class="item-ilvl">
           {{item.ilvl}}&nbsp;-&nbsp;
@@ -15,9 +20,6 @@
           {{item.typeSlot}}
         </span>
       </div>
-      <span class="item-nom" [style.color]="item.qualite.colorCss">
-        {{item.nom}}
-      </span>
     </div>
   </ng-template>
 </div>

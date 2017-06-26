@@ -9,23 +9,23 @@ export const ITEM_RARITY_CONFIG: ItemQuality[] = [
   },
   {
     numero: 2,
-    colorCss: '#1EDE22',
+    colorCss: '#3DC52B',
   },
   {
     numero: 3,
-    colorCss: '#274ECC',
+    colorCss: '#0081FF',
   },
   {
     numero: 4,
-    colorCss: '#A334C9',
+    colorCss: '#C600FF',
   },
   {
     numero: 5,
-    colorCss: '#F28000',
+    colorCss: '#FF8000',
   },
   {
     numero: 6,
-    colorCss: '#E6CC80',
+    colorCss: '#E5CC80',
   }
 ];
 

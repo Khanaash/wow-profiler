@@ -5,10 +5,14 @@ import {CharacterDetailsComponent} from "app/character-details/character-details
 import * as GlobalConstants from 'global-consts';
 import {CharacterDetailsOverviewComponent} from "app/character-details/character-details-overview/character-details-overview.component";
 import {CharacterDetailsReputationsComponent} from "app/character-details/character-details-reputations/character-details-reputations.component";
+import {PersonnageResolver} from "app/character-details/personnage-resolver.service";
 
 const characterDetailRoutes: Routes = [
   { path: GlobalConstants.ROUTE_CHARACTER_DETAILS + '/:serverName/:characterName',
     component: CharacterDetailsComponent,
+    resolve: {
+      personnage: PersonnageResolver
+    },
     children: [
       {
         path: '',
