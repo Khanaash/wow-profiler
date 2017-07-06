@@ -48,12 +48,12 @@ export class Statistiques implements Serializable<Statistiques> {
 
   deserialize(input): Statistiques {
     this.pointDeVie = input.health;
-    this.force = input.health;
+    this.force = input.str;
     this.agilite = input.agi;
     this.intelligence = input.int;
     this.endurance = input.sta;
-    this.critique = input.crit;
-    this.critiquePourcentage = input.critRating;
+    this.critique = input.critRating;
+    this.critiquePourcentage = input.crit;
     this.hatePourcentage = input.haste;
     this.hate = input.hasteRating;
     this.maitrisePourcentage = input.mastery;

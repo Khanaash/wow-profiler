@@ -1,19 +1,52 @@
 <div *ngIf="personnage" class="character-overview">
-    <div class="col-xs-4 stat-character-panel">
-      <div class="row">
-
-        <div>Vie : {{personnage.statistiques.pointDeVie}}</div>
-        <div>Vie : 20150</div>
-        <div class="h-separator"></div>
-        <div>Vie : 20150</div>
-        <div>Vie : 20150</div>
-        <div>Vie : 20150</div>
+  <div class="col-xs-4 stat-character-panel">
+    <div class="row">
+      <div class="stats_block">
+        <div class="stats-block-header">Caractéristiques</div>
+        <div class="stats-block-body">
+          <div class="stat stat-primaire"><span class="stat-nom">Vie :</span><span class="stat-value">{{personnage.statistiques.pointDeVie | number:'1.0-0'}}</span>
+          </div>
+          <div class="stat stat-primaire"><span class="stat-nom">{{personnage.getMainStatistique().nom}} :</span><span class="stat-value">{{personnage.getMainStatistique().valeurEntiere | number:'1.0-0'}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="h-separator"></div>
+      <div class="stats_block">
+        <div class="stats-block-header">Améliorations</div>
+        <div class="stats-block-body">
+          <div class="stat stat-secondaire">
+            <span class="stat-nom">Critique :</span>
+            <span class="stat-value">{{personnage.statistiques.critique | number:'1.0-0'}} ({{personnage.statistiques.critiquePourcentage | number:'1.0-2'}})</span>
+          </div>
+          <div class="stat stat-secondaire">
+            <span class="stat-nom">Hate :</span>
+            <span class="stat-value">{{personnage.statistiques.hate | number:'1.0-0'}} ({{personnage.statistiques.hatePourcentage | number:'1.0-2'}})</span>
+          </div>
+          <div class="stat stat-secondaire">
+            <span class="stat-nom">Maitrise :</span>
+            <span class="stat-value">{{personnage.statistiques.maitrise | number:'1.0-0'}} ({{personnage.statistiques.maitrisePourcentage | number:'1.0-2'}})</span>
+          </div>
+          <div class="stat stat-secondaire">
+            <span class="stat-nom">PolyvalenceDégat :</span>
+            <span class="stat-value">{{personnage.statistiques.polyvalence | number:'1.0-0'}} ({{personnage.statistiques.polyvalenceBonusDegats | number:'1.0-2'}})</span>
+          </div>
+          <div class="stat stat-secondaire">
+            <span class="stat-nom">PolyvalenceSoin :</span>
+            <span class="stat-value">{{personnage.statistiques.polyvalence | number:'1.0-0'}} ({{personnage.statistiques.polyvalenceBonusSoins | number:'1.0-2'}})</span>
+          </div>
+          <div class="stat stat-secondaire">
+            <span class="stat-nom">PolyvalenceReducDegat :</span>
+            <span class="stat-value">{{personnage.statistiques.polyvalence | number:'1.0-0'}} ({{personnage.statistiques.polyvalenceReductionDegatsPris | number:'1.0-2'}})</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-xs-4">
-      <app-item *ngFor="let item of personnage.items.getItemsGaucheOrdonnes()" [item]="item"></app-item>
-    </div>
-    <div class="col-xs-4">
-      <app-item *ngFor="let item of personnage.items.getItemsDroiteOrdonnes()" [item]="item" [alignerADroite]="true"></app-item>
-    </div>
+  </div>
+  <div class="col-xs-4">
+    <app-item *ngFor="let item of personnage.items.getItemsGaucheOrdonnes()" [item]="item"></app-item>
+  </div>
+  <div class="col-xs-4">
+    <app-item *ngFor="let item of personnage.items.getItemsDroiteOrdonnes()" [item]="item"
+              [alignerADroite]="true"></app-item>
+  </div>
 </div>

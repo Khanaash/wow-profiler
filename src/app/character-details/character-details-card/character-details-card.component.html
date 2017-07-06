@@ -19,7 +19,7 @@
             {{personnage.getNomAvecSelectedTitre()}}
           </div>
           <div [style.color]="personnage.classeInfos.colorCss">
-            {{personnage.getClasseLibelle()}} {{personnage.getRaceLibelle()}}
+            {{personnage.getClasseLibelle()}} {{personnage.getMainSpecialisation().nom}}, {{personnage.getRaceLibelle()}}
           </div>
         </div>
       </div>

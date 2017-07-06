@@ -14,31 +14,10 @@ export class CharacterDetailsComponent implements OnInit {
   public inNomPersonnage: string;
   public personnage: Personnage;
   public erreurApparue = false;
-  public loading = true;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.personnage = this.route.snapshot.data['personnage'];
-    // this.route.params
-    //   .switchMap((params: Params) => {
-    //     this.inNomServeur = params['serverName'];
-    //     this.inNomPersonnage = params['characterName'];
-    //     return this.characterService.rechercherPersonnage(this.inNomServeur, this.inNomPersonnage);
-    //   })
-    //   .take(1)
-    //   .subscribe(
-    //     (data) => {
-    //       this.personnage = data;
-    //       this.personnageSharedService.pushPersonnage(this.personnage);
-    //     },
-    //     (err) => {
-    //       this.erreurApparue = true;
-    //       this.loading = false;
-    //     },
-    //     () => {
-    //       this.loading = false;
-    //     }
-    //   );
   }
 }

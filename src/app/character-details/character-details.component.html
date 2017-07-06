@@ -1,14 +1,3 @@
-<div class="col-xs-12">
-  <div class="text-center row">
-    <h3 *ngIf="loading">
-      Recherche du personnage en cours
-    </h3>
-    <span *ngIf="erreurApparue">
-      <h4>Le personnage {{inNomPersonnage}} n'a pas été trouvé sur le serveur {{inNomServeur}}.</h4>
-      <button routerLink="/" type="button" class="btn btn-primary">Retour sur la recherche</button>
-    </span>
-  </div>
-</div>
 <app-character-details-card *ngIf="personnage" [personnage]="personnage"></app-character-details-card>
 
 <div class="col-xs-12">

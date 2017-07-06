@@ -3,6 +3,9 @@ import {Statistiques} from "./statistiques";
 import {Classe, CLASSE_CONFIG} from "./classe";
 import {Race, RACE_CONFIG} from "./race";
 import {Items} from "./items";
+import {Specialisation} from "app/_shared/model/specialisation";
+import {current} from "codelyzer/util/syntaxKind";
+import {StatistiqueDisplayer} from "app/_shared/model/statistique-displayer";
 
 export class Personnage implements Serializable<Personnage> {
   /** Atributs **/
@@ -20,6 +23,7 @@ export class Personnage implements Serializable<Personnage> {
   statistiques: Statistiques;
   classeInfos: Classe;
   items: Items;
+  specialisations: Specialisation[];
 
   deserialize(input): Personnage {
     this.nom = input.name;
@@ -42,6 +46,11 @@ export class Personnage implements Serializable<Personnage> {
     this.race = RACE_CONFIG.find(race => input.race === race.numero);
     this.items = new Items().deserialize(input.items);
 
+    this.specialisations = new Array<Specialisation>();
+    for (const currentSpecialisation of input.talents) {
+      this.specialisations.push(new Specialisation().deserialize(currentSpecialisation));
+    }
+
     return this;
   }
 
@@ -57,6 +66,35 @@ export class Personnage implements Serializable<Personnage> {
       }
     }
     return selectedTitre;
+  }
+
+  public getMainStatistique(): StatistiqueDisplayer {
+    const agilite = this.statistiques.agilite;
+    const force = this.statistiques.force;
+    const intelligence = this.statistiques.intelligence;
+
+    const mainStat = new StatistiqueDisplayer();
+    mainStat.nom = "Agilité";
+    mainStat.valeurEntiere = agilite;
+    if (force > mainStat.valeurEntiere) {
+      mainStat.nom = "Force";
+      mainStat.valeurEntiere = force;
+    }
+    if (intelligence > mainStat.valeurEntiere) {
+      mainStat.nom = "Intelligence";
+      mainStat.valeurEntiere = intelligence;
+    }
+
+    return mainStat;
+  }
+
+  public getMainSpecialisation(): Specialisation {
+    for (const specialisation of this.specialisations) {
+      if (specialisation.active) {
+        return specialisation;
+      }
+    }
+    return null;
   }
 
   private isFeminin(): boolean {
