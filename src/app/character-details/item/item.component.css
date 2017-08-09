@@ -38,12 +38,11 @@
 }
 
 .item-type {
-  color: #000000;
 }
 
 .item-ilvl {
   font-style: italic;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .item-nom {

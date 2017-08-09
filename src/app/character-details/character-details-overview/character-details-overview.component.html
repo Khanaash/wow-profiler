@@ -1,5 +1,5 @@
 <div *ngIf="personnage" class="character-overview">
-  <div class="col-xs-4 stat-character-panel">
+  <div class="col-xs-12 col-md-4 stat-character-panel">
     <div class="row">
       <div class="stats_block">
         <div class="stats-block-header">Caractéristiques</div>
@@ -42,10 +42,10 @@
       </div>
     </div>
   </div>
-  <div class="col-xs-4">
+  <div class="col-xs-6 col-md-4">
     <app-item *ngFor="let item of personnage.items.getItemsGaucheOrdonnes()" [item]="item"></app-item>
   </div>
-  <div class="col-xs-4">
+  <div class="col-xs-6 col-md-4">
     <app-item *ngFor="let item of personnage.items.getItemsDroiteOrdonnes()" [item]="item"
               [alignerADroite]="true"></app-item>
   </div>

@@ -1,7 +1,9 @@
 import {Component, OnInit} from "@angular/core";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {Personnage} from "app/_shared/model/personnage";
-import {CharacterService} from "app/_shared/services/character.service";
+import {environment} from "environments/environment";
+
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-character-details',
@@ -10,14 +12,19 @@ import {CharacterService} from "app/_shared/services/character.service";
   providers: []
 })
 export class CharacterDetailsComponent implements OnInit {
-  public inNomServeur: string;
-  public inNomPersonnage: string;
   public personnage: Personnage;
-  public erreurApparue = false;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.personnage = this.route.snapshot.data['personnage'];
+    document.body.classList.add('character-render');
+    $('body').css('background-image',
+                  `url(${environment.baseUrlBlizzardRender}/character/${this.route.snapshot.params['serverName'].toLowerCase()}/${this.personnage.getIdentifiantRenderImages()}-main.jpg)`);
+    $(document).ready(() => {
+      $(".h-separator").css('background', this.personnage.classeInfos.colorCss);
+      $(".border-bottom-with-class-color").css("border-color", this.personnage.classeInfos.colorCss);
+      $(".with-class-color").css("color", this.personnage.classeInfos.colorCss);
+    } );
   }
 }

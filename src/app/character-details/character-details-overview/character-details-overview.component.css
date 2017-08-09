@@ -1,6 +1,6 @@
 .stat-character-panel {
   border: 1px solid black;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .stats-block-header {
-  color: black;
+  color: #ffffff;
   text-align: center;
   font-weight: bold;
 }

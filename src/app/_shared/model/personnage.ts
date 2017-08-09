@@ -122,4 +122,11 @@ export class Personnage implements Serializable<Personnage> {
   public isHorde(): boolean {
     return this.faction === 1;
   }
+
+  public getIdentifiantRenderImages(): string {
+    const indexPremierSlash = this.imagePortrait.indexOf('/');
+    const indexTiret = this.imagePortrait.indexOf('-');
+
+    return this.imagePortrait.substr(indexPremierSlash + 1, indexTiret - indexPremierSlash - 1);
+  }
 }

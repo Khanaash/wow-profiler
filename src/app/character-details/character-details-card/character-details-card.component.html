@@ -1,6 +1,5 @@
-<div class="col-xs-12 card-character">
+<div class="col-xs-12 card-character border-bottom-with-class-color">
   <div class="row">
-    <div class="card-character-background" [ngStyle]="{'background-image': 'url(/src/assets/character-details/' + personnage.classeInfos.cardBackgroundLocation + ')'}"></div>
     <div class="card-character-foreground">
       <div class="col-xs-9 card-character-summary">
         <div>
@@ -18,25 +17,25 @@
           <div class="card-character-name">
             {{personnage.getNomAvecSelectedTitre()}}
           </div>
-          <div [style.color]="personnage.classeInfos.colorCss">
+          <div class="with-class-color">
             {{personnage.getClasseLibelle()}} {{personnage.getMainSpecialisation().nom}}, {{personnage.getRaceLibelle()}}
           </div>
         </div>
       </div>
       <div class="col-xs-3 card-character-main-infos">
         <div class="pull-right card-character-main-infos-block">
-          <div class="card-character-main-infos-block-entete" [style.border-bottom-color]="personnage.classeInfos.colorCss">
+          <div class="card-character-main-infos-block-entete border-bottom-with-class-color">
             Niveau moyen des objets équipés
           </div>
-          <div class="card-character-main-infos-block-valeur" [style.color]="personnage.classeInfos.colorCss">
+          <div class="card-character-main-infos-block-valeur with-class-color">
             {{personnage.items.ilvlEquipe}} <span class="ilvl-global">(Niveau moyen global : {{personnage.items.ilvlMoyen}})</span>
           </div>
         </div>
         <div class="pull-right card-character-main-infos-block">
-          <div class="card-character-main-infos-block-entete" [style.border-bottom-color]="personnage.classeInfos.colorCss">
+          <div class="card-character-main-infos-block-entete border-bottom-with-class-color">
             <img src="/src/assets/achievements.gif"/>&nbsp;Hauts faits
           </div>
-          <div class="card-character-main-infos-block-valeur" [style.color]="personnage.classeInfos.colorCss">
+          <div class="card-character-main-infos-block-valeur with-class-color">
             {{personnage.pointsHautFaits}}
           </div>
         </div>

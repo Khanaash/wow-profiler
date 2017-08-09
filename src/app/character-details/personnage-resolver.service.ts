@@ -5,11 +5,11 @@ import {CharacterService} from "app/_shared/services/character.service";
 import * as GlobalConstants from "global-consts";
 
 @Injectable()
-export class PersonnageResolver implements Resolve<Personnage> {
+export class PersonnageResolver implements Resolve<void | Personnage> {
 
   constructor(private characterService: CharacterService, private router: Router) { }
 
-  resolve(route: ActivatedRouteSnapshot): Promise<Personnage> {
+  resolve(route: ActivatedRouteSnapshot): Promise<void | Personnage> {
     return this.characterService.rechercherPersonnage(route.params['serverName'], route.params['characterName']).toPromise()
       .catch(err => {
         alert("todo notification bad character");

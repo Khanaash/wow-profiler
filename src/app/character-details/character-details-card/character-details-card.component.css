@@ -1,14 +1,10 @@
 .card-character {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  height: 200px;
+  color: white;
 }
 
-.card-character-background {
-  background-repeat: repeat-x;
-  background-position: 50% 0px;
-  height: 300px;
-}
-
-.card-character-background:before{
+.card-characters:before{
   content: '';
   position: absolute;
   top: 0;
@@ -24,8 +20,6 @@
   top: 15px;
   left:0;
   right:0;
-  overflow: visible;
-  color: white;
 }
 
 .card-character-summary {
@@ -108,7 +102,6 @@
 
 .card-character-main-infos-block-entete {
   text-align: center;
-  border-bottom: rgba(100,100,100,0.5) 1px solid;
 }
 
 .card-character-main-infos-block-valeur {

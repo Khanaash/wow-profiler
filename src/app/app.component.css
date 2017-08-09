@@ -28,14 +28,13 @@
 }
 
 .main-container {
-  background:#f5f5f5;
   min-height: 100vh;
-  min-width: 1200px;
 }
 
 .body-container {
   height: calc(100% - 50px - 60px); /* moins hauteur navbar */
-  width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* Sticky footer styles
