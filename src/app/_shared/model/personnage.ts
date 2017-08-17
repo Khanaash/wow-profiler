@@ -76,13 +76,19 @@ export class Personnage implements Serializable<Personnage> {
     const mainStat = new StatistiqueDisplayer();
     mainStat.nom = "Agilité";
     mainStat.valeurEntiere = agilite;
+    mainStat.cssIcon = "fa fa-stack-1x fa-paw";
+    mainStat.couleur = "#e28b21";
     if (force > mainStat.valeurEntiere) {
       mainStat.nom = "Force";
       mainStat.valeurEntiere = force;
+      mainStat.cssIcon = "ra ra-sword";
+      mainStat.couleur = "#c54c4d";
     }
     if (intelligence > mainStat.valeurEntiere) {
       mainStat.nom = "Intelligence";
       mainStat.valeurEntiere = intelligence;
+      mainStat.cssIcon = "ra ra-crystal-ball";
+      mainStat.couleur = "#b934cb";
     }
 
     return mainStat;

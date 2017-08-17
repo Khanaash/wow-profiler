@@ -1,0 +1,29 @@
+<div class="stat-panel">
+  <div class="stats_block">
+    <div class="stats-block-header">CARACTÉRISTIQUES</div>
+    <div class="stats-block-body">
+      <app-stat [nomStat]="'Vie'" [valeur]="personnage.statistiques.pointDeVie" [cssIcon]="'fa fa-stack-1x fa-heart'" [couleur]="'#2cce61'"></app-stat>
+      <app-stat [nomStat]="mainStatistique.nom" [valeur]="mainStatistique.valeurEntiere"
+                [cssIcon]="mainStatistique.cssIcon" [couleur]="mainStatistique.couleur"></app-stat>
+      <app-stat [nomStat]="'Endurance'" [valeur]="personnage.statistiques.endurance" [cssIcon]="'fa fa-stack-1x fa-plus'" [couleur]="'#00e02a'"></app-stat>
+    </div>
+  </div>
+  <div class="h-separator mtop20 mbot20"></div>
+  <div class="stats_block">
+    <div class="stats-block-header">AMÉLIORATIONS</div>
+    <div class="stats-block-body">
+      <app-stat [nomStat]="'Critique'" [valeur]="personnage.statistiques.critique" [cssIcon]="'fa fa-stack-1x fa-crosshairs'" [couleur]="'#ce1624'"></app-stat>
+      <app-stat [nomStat]="'Hate'" [valeur]="personnage.statistiques.hate" [cssIcon]="'fa fa-stack-1x fa-clock-o '" [couleur]="'#b6b01a'"></app-stat>
+      <app-stat [nomStat]="'Maitrise'" [valeur]="personnage.statistiques.maitrise" [cssIcon]="'fa fa-stack-1x fa-star'" [couleur]="'#1197cb'"></app-stat>
+      <app-stat [nomStat]="'Polyvalence'" [valeur]="personnage.statistiques.polyvalence" [cssIcon]="'fa fa-stack-1x fa-cogs'" [couleur]="'#8a8689'"></app-stat>
+    </div>
+    <div class="mtop20"></div>
+    <div class="stats-block-body">
+      <app-stat [nomStat]="'Armure'" [valeur]="personnage.statistiques.armure" [cssIcon]="'ra ra-helmet'" [couleur]="'#856c33'"></app-stat>
+      <app-stat [nomStat]="'Parade'" [valeur]="personnage.statistiques.parade" [cssIcon]="'ra ra-crossed-swords'" [couleur]="'#ce1624'"></app-stat>
+      <app-stat [nomStat]="'Esquive'" [valeur]="personnage.statistiques.esquive" [cssIcon]="'ra ra-double-team'" [couleur]="'#b6b01a'"></app-stat>
+      <app-stat [nomStat]="'Blocage'" [valeur]="personnage.statistiques.blocage" [cssIcon]="'ra ra-heavy-shield'" [couleur]="'#1197cb'"></app-stat>
+      <app-stat [nomStat]="'Vol de vie'" [valeur]="personnage.statistiques.volDeVie" [cssIcon]="'fa fa-stack-1x fa-refresh'" [couleur]="'#6e1419'"></app-stat>
+    </div>
+  </div>
+</div>

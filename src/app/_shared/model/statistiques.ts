@@ -23,28 +23,10 @@ export class Statistiques implements Serializable<Statistiques> {
   parade: number;
   blocagePourcentage: number;
   blocage: number;
-  // mainHandDmgMin: 1712;
   // powerType: insanity;
   // power: 100;
   // speedRating: 27.275;
   // speedRatingBonus: 4.632017;
-  // leechRatingBonus: 0;
-  // avoidanceRating: 0;
-  // avoidanceRatingBonus: 0;
-  // spellPen: 0;
-  // mana5: 0;
-  // mana5Combat: 0;
-  // mainHandDmgMax: 3182;
-  // mainHandSpeed: 1.421;
-  // mainHandDps: 1721.9199;
-  // offHandDmgMin: 0;
-  // offHandDmgMax: 0;
-  // offHandSpeed: 1.579;
-  // offHandDps: 0;
-  // rangedDmgMin: -1;
-  // rangedDmgMax: -1;
-  // rangedSpeed: -1;
-  // rangedDps: -1
 
   deserialize(input): Statistiques {
     this.pointDeVie = input.health;

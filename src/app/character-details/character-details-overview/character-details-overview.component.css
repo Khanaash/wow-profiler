@@ -1,45 +1,4 @@
-.stat-character-panel {
-  border: 1px solid black;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 5px;
-}
-
 .character-overview {
   display: flex;
   flex-direction: row;
-}
-
-.stats_block .stats-block-body {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 10px 0;
-}
-
-.stat {
-  padding: 0 5px;
-}
-
-.stat-primaire {
-  width: 50%;
-}
-
-.stat-nom {
-  color: #AD963B;
-  font-weight: bold;
-}
-
-.stat-value {
-  float: right;
-  font-weight: 600;
-}
-
-.stats-block-header {
-  color: black;
-  text-align: center;
-  font-weight: bold;
-}
-
-.stat-secondaire {
-  width: 100%;
 }

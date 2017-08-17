@@ -1,0 +1,25 @@
+
+.stat {
+  display: flex;
+  flex-direction: row;
+  padding: 0 5px;
+}
+
+.stat-icon {
+  text-align: center;
+  align-self: center;
+  width: 30%;
+}
+
+.stat-body {
+  width: 70%;
+}
+
+.stat-nom {
+  font-weight: bold;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #333;
+}

@@ -1,0 +1,22 @@
+.stat-panel {
+  padding-right: 10px;
+  border-right: 1px solid rgba(0, 0, 0, 0.22);
+  height: 100%;
+}
+
+.stats_block .stats-block-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.stats-block-header {
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+
+.stats-block-body > app-stat {
+  flex-basis: 50%;
+}
