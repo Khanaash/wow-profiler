@@ -113,7 +113,7 @@ export class Personnage implements Serializable<Personnage> {
     if (selectedTitre != null) {
       return selectedTitre.nom.replace('%s', this.nom);
     } else {
-      return name;
+      return this.nom;
     }
   }
 
