@@ -17,6 +17,14 @@
   font-weight: bold;
 }
 
+.stat-header-caracteristique {
+  position: relative;
+}
+
+.stat-checkbox-pourcentage {
+  position: absolute;
+  right: 0;
+}
 .stats-block-body > app-stat {
   flex-basis: 50%;
 }

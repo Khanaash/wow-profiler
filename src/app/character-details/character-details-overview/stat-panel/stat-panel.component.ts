@@ -10,6 +10,7 @@ import {StatistiqueDisplayer} from "app/_shared/model/statistique-displayer";
 export class StatPanelComponent implements OnInit {
   @Input() personnage: Personnage;
 
+  public afficherPourcentage: boolean;
   public mainStatistique: StatistiqueDisplayer;
 
   constructor() {
@@ -17,6 +18,7 @@ export class StatPanelComponent implements OnInit {
 
   ngOnInit() {
     this.mainStatistique = this.personnage.getMainStatistique();
+    this.afficherPourcentage = true;
   }
 
 }

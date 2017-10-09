@@ -7,7 +7,9 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class StatComponent implements OnInit {
   @Input() nomStat: string;
-  @Input() valeur: string;
+  @Input() valeur: number;
+  @Input() valeurPourcentage: number;
+  @Input() valeurPourcentageSecondaire?: number;
   @Input() cssIcon: string;
   @Input() couleur: string;
   @Input() isPourcentage = false;

@@ -7,6 +7,9 @@
   </div>
   <div class="stat-body">
     <div class="stat-nom">{{nomStat}}</div>
-    <div class="stat-value">{{valeur | number:isPourcentage ? '1.0-2' : '1.0-0'}}</div>
+    <div class="stat-value">
+      <span>{{isPourcentage ? (valeurPourcentage | number:'1.0-2') + ' %' : valeur | number:'1.0-0'}}</span>
+      <span [hidden]="!valeurPourcentageSecondaire || !isPourcentage"> / {{(valeurPourcentageSecondaire | number:'1.0-2') + ' %'}}</span>
+    </div>
   </div>
 </div>

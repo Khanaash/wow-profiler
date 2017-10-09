@@ -9,6 +9,7 @@ import {CharacterDetailsReputationsComponent} from "app/character-details/charac
 import {ComponentUtilsModule} from "app/_shared/modules/component-utils.module";
 import {StatPanelComponent} from "app/character-details/character-details-overview/stat-panel/stat-panel.component";
 import { StatComponent } from './character-details-overview/stat-panel/stat.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
