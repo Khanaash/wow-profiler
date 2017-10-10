@@ -12,12 +12,15 @@ import {CharacterDetailsModule} from "app/character-details/character-details.mo
 import {CharacterService} from "app/_shared/services/character.service";
 import {ServeurService} from "app/_shared/services/serveur.service";
 import {PersonnageResolver} from "app/character-details/personnage-resolver.service";
+import {PersonnageHistoriqueService} from "app/_shared/services/personnage-historique.service";
+import {CharacterVignetteResumeComponent} from "app/character-details/character-vignette-resume/character-vignette-resume.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchCharacterComponent,
-    PageNotFoundComponentComponent
+    PageNotFoundComponentComponent,
+    CharacterVignetteResumeComponent
   ],
   imports: [
     // generic modules
@@ -31,6 +34,7 @@ import {PersonnageResolver} from "app/character-details/personnage-resolver.serv
   providers: [
     CharacterService,
     ServeurService,
+    PersonnageHistoriqueService,
     PersonnageResolver
   ],
   bootstrap: [AppComponent]

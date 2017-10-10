@@ -27,3 +27,10 @@
   </div>
 </form>
 
+<div class="row">
+  <div class="col-xs-6">
+    <app-character-vignette-resume *ngFor="let personnageReminder of historiquePersonnages"
+                                   [personnage]="personnageReminder">
+    </app-character-vignette-resume>
+  </div>
+</div>

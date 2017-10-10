@@ -5,6 +5,8 @@ import {ServeurService} from 'app/_shared/services/serveur.service';
 import {EnumPaysServeurUtils, EnumPaysServeur} from './enum-pays-serveur';
 
 import * as GlobalConstants from 'global-consts';
+import {PersonnageHistoriqueService} from "app/_shared/services/personnage-historique.service";
+import {PersonnageReminder} from "app/_shared/model/personnage-reminder";
 
 @Component({
   selector: 'app-search-character',
@@ -15,21 +17,24 @@ import * as GlobalConstants from 'global-consts';
 export class SearchCharacterComponent implements OnInit {
   public serveurs: Serveur[];
   public paysServeurs : PaysServeur[];
+  public historiquePersonnages: PersonnageReminder[];
   public nomPersonnage: string;
   public selectedServeur : Serveur;
 
   constructor(
     private router: Router,
-    private serveurService: ServeurService) {
+    private serveurService: ServeurService,
+    private personnageHistoriqueService: PersonnageHistoriqueService) {
   }
 
   ngOnInit(): void {
-    this.serveurService.rechercherTous().subscribe(
-      response => {
+    this.serveurService.rechercherTous().subscribe(response => {
         this.serveurs = response;
         this.buildPaysServeur();
       }
     );
+
+    this.historiquePersonnages = this.personnageHistoriqueService.recupererHistoriqueDesPersonnages();
   }
 
 
@@ -78,6 +83,7 @@ export class SearchCharacterComponent implements OnInit {
   public rechercher(): void {
     this.router.navigate([GlobalConstants.ROUTE_CHARACTER_DETAILS, this.selectedServeur.nom, this.nomPersonnage]);
   }
+
 }
 
 class PaysServeur {

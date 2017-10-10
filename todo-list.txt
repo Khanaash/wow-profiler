@@ -3,3 +3,4 @@
 - image du personnage en banierre plutot qu'un fond prédéfini
 - recherche dans la barre du menu aussi (seulement si on est pas sur l'acceuil
 - avoir un backend qui fait passerele pour les requetes http sur battlenet
+- vignette sur la banniere pour indiquer le max boss battu

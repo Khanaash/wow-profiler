@@ -18,6 +18,7 @@ export class Personnage implements Serializable<Personnage> {
   totalHonorableKills: number;
   niveau: number;
   pointsHautFaits: number;
+  serveur: string;
 
   titres: Titre[];
   statistiques: Statistiques;
@@ -35,6 +36,7 @@ export class Personnage implements Serializable<Personnage> {
     this.totalHonorableKills = input.totalHonorableKills;
     this.niveau = input.level;
     this.pointsHautFaits = input.achievementPoints;
+    this.serveur = input.realm;
 
     this.titres = new Array<Titre>();
     for (const currentTitre of input.titles) {

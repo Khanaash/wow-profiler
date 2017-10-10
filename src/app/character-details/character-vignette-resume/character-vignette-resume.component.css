@@ -1,0 +1,23 @@
+.vignette-personnage {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.vignette-personnage-avatar > img {
+  float: left;
+  border: 1px black solid;
+  border-radius: 15%;
+  -moz-border-radius: 15%;
+  width: 48px;
+  height: 48px;
+}
+
+.vignette-personnage-body {
+  padding-left: 5px;
+}
+
+.vignette-personnage-heure {
+  margin-left: auto;
+  text-align: center;
+}
