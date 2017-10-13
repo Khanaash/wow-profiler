@@ -1,14 +1,18 @@
-<div class="vignette-personnage">
-  <div class="vignette-personnage-avatar">
-    <img src="{{envVariableBaseUrlBlizzardRender}}/character/{{personnage.imagePortrait}}"  alt="Avatar"/>
+<a class="vignette-personnage-link" (click)="accederDetailPersonnage(personnage)">
+  <div class="vignette-personnage" [style.background-color]="personnage.couleurCss">
+      <div class="vignette-personnage-avatar">
+        <img src="{{envVariableBaseUrlBlizzardRender}}/character/{{personnage.imagePortrait}}"  alt="Avatar"/>
+      </div>
+      <div class="vignette-personnage-body">
+        <div class="vignette-personnage-body-nom" >
+          {{personnage.nom}} - {{personnage.serveur}}
+        </div>
+        <div>{{personnage.classe}}, {{personnage.niveau}}</div>
+      </div>
+      <div class="vignette-personnage-heure">
+        <div>{{personnage.heureConsultation | date:'dd/MM/yyyy'}}</div>
+        <div>{{personnage.heureConsultation | date:'HH:mm:ss'}}</div>
+      </div>
   </div>
-  <div class="vignette-personnage-body">
-    <div>{{personnage.nom}} - {{personnage.serveur}}</div>
-    <div>{{personnage.classe}} de niveau {{personnage.niveau}}</div>
-  </div>
-  <div class="vignette-personnage-heure">
-    <div>{{personnage.heureConsultation | date:'dd/MM/yyyy'}}</div>
-    <div>{{personnage.heureConsultation | date:'HH:mm:ss'}}</div>
-  </div>
-</div>
+</a>
 

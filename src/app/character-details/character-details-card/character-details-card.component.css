@@ -80,6 +80,7 @@
   line-height: 16px;
   border-radius: 20%;
   -moz-border-radius: 20%;
+  -webkit-border-radius: 20%;
   border: 2px black solid;
   /* position du badge */
   position: absolute;

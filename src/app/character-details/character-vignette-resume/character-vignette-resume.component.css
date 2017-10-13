@@ -2,6 +2,7 @@
   margin-bottom: 5px;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .vignette-personnage-avatar > img {
@@ -9,6 +10,7 @@
   border: 1px black solid;
   border-radius: 15%;
   -moz-border-radius: 15%;
+  -webkit-border-radius: 15%;
   width: 48px;
   height: 48px;
 }
@@ -17,7 +19,26 @@
   padding-left: 5px;
 }
 
+.vignette-personnage-body-nom {
+  font-weight: 700;
+}
+
 .vignette-personnage-heure {
   margin-left: auto;
   text-align: center;
+}
+
+a.vignette-personnage-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.vignette-personnage-link:hover {
+  cursor: pointer;
+}
+
+a.vignette-personnage-link:hover > div {
+  transform: scale(1.02, 1.02);
+  -webkit-transform: scale(1.02, 1.02);
+  -moz-transform: scale(1.02, 1.02);
 }

@@ -34,7 +34,7 @@ export class PersonnageHistoriqueService {
     }
 
     historiquePersonnagesConsultes.push(new PersonnageReminder(personnage.nom, personnage.niveau, personnage.serveur,
-      personnage.getClasseLibelle(), personnage.imagePortrait));
+      personnage.getClasseLibelle(), personnage.imagePortrait, personnage.classeInfos.colorCss));
     localStorage.setItem(LocalstorageConstants.PERSONNAGES_HISTORIQUE, JSON.stringify(historiquePersonnagesConsultes));
   }
 

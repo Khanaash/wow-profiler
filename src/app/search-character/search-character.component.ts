@@ -35,6 +35,10 @@ export class SearchCharacterComponent implements OnInit {
     );
 
     this.historiquePersonnages = this.personnageHistoriqueService.recupererHistoriqueDesPersonnages();
+    if (this.historiquePersonnages != null && this.historiquePersonnages.length > 0) {
+      this.historiquePersonnages = this.historiquePersonnages
+        .sort((histoPerso1, histoPerso2) => histoPerso2.heureConsultation.getTime() - histoPerso1.heureConsultation.getTime());
+    }
   }
 
 
