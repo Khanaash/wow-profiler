@@ -1,0 +1,15 @@
+.input-group-multi-input .form-control {
+  border-right-width: 0px;
+}
+
+.input-group-multi-input .form-control:focus {
+  border-right-width: 1px;
+}
+
+.input-group-multi-input .form-control.region-select {
+  width: 10%;
+}
+
+.input-group-multi-input .form-control.realm-char-select {
+  width: 45%;
+}

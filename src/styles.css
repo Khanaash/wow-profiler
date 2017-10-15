@@ -33,8 +33,10 @@ body {
   margin-bottom: 20px;
 }
 
+
 /* WIDTH */
 .w20 {width: 20px;} .w30 {width: 30px;} .w40 {width: 40px;} .w50 {width: 50px;}
+.w5p {width: 5%;} .w10p {width: 10%;} .w15p {width: 15%;} .w20p {width: 20%;} .w25p {width: 25%;} .w30p {width: 30%;} .w35p {width: 35%;} .w40p {width: 40%;} .w45p {width: 45%;}
 
 /* OVERRIDE BOOTSTRAP */
 .container-fluid, .container {

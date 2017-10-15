@@ -2,7 +2,6 @@
   margin-bottom: 5px;
   display: flex;
   flex-direction: row;
-  align-items: center;
 }
 
 .vignette-personnage-avatar > img {
@@ -17,15 +16,20 @@
 
 .vignette-personnage-body {
   padding-left: 5px;
+  flex-grow: 1;
 }
 
 .vignette-personnage-body-nom {
   font-weight: 700;
+  align-self: center;
+  text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
 }
 
 .vignette-personnage-heure {
   margin-left: auto;
-  text-align: center;
+  font-style: italic;
+  font-size: 75%;
+  font-weight: 700;
 }
 
 a.vignette-personnage-link {
