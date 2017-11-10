@@ -1,16 +1,22 @@
 <a class="vignette-personnage-link" (click)="accederDetailPersonnage(personnage)">
   <div class="vignette-personnage">
-      <div class="vignette-personnage-avatar">
+      <div class="vignette-personnage-avatar" [style.background-color]="personnage.couleurCss">
+        <div class="vignette-personnage-avatar-ilvl-hf">
+          <div><img src="/src/assets/ilvl-icon.png"/>&nbsp;{{personnage.ilvl}}</div>
+          <div><img src="/src/assets/achievements.gif"/>&nbsp;{{personnage.hautsFaitsPoints}}</div>
+        </div>
         <img src="{{envVariableBaseUrlBlizzardRender}}/character/{{personnage.imagePortrait}}"  alt="Avatar"/>
+        <div class="background-portrait" [style.background-color]="personnage.couleurCss"></div>
       </div>
       <div class="vignette-personnage-body">
-        <div class="vignette-personnage-heure">
-          le {{personnage.heureConsultation | date:'dd/MM/yyyy'}} à {{personnage.heureConsultation | date:'HH:mm:ss'}}
-        </div>
         <div class="vignette-personnage-body-nom">
-          <span [style.background-color]="personnage.couleurCss" class="label">{{personnage.nom}} - {{personnage.serveur}} - {{personnage.classe}}, {{personnage.niveau}}</span>
+          {{personnage.nom}} -
+          <span class="vignette-personnage-body-serveur">{{personnage.serveur}}</span>
         </div>
+        <div class="vignette-personnage-body-classe">{{personnage.classe}}, {{personnage.niveau}}</div>
+      </div>
+      <div class="vignette-personnage-heure">
+        le {{personnage.heureConsultation | date:'dd/MM/yyyy'}} à {{personnage.heureConsultation | date:'HH:mm:ss'}}
       </div>
   </div>
 </a>
-

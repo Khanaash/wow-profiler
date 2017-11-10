@@ -22,11 +22,13 @@
 </form>
 
 <div class="row">
-  <div class="col-xs-4 col-xs-offset-2">
+  <div class="col-xs-offset-2 col-xs-8">
     <h3 class="text-center">Dernières consultations</h3>
     <div class="h-separator mbot20"></div>
-    <app-character-vignette-resume *ngFor="let personnageReminder of historiquePersonnages"
-                                   [personnage]="personnageReminder">
-    </app-character-vignette-resume>
+    <div class="vignettes-personnage-historique">
+      <div *ngFor="let personnageReminder of historiquePersonnages">
+        <app-character-vignette-resume [personnage]="personnageReminder"></app-character-vignette-resume>
+      </div>
+    </div>
   </div>
 </div>

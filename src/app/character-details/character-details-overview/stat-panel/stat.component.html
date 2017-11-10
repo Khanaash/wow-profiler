@@ -1,12 +1,12 @@
-<div class="stat" [ngStyle]="{'color': couleur}">
-  <div class="stat-icon">
+<div class="stat">
+  <div class="stat-icon" [ngStyle]="{'color': couleur}">
     <span class="fa-stack fa-lg">
       <i class="fa fa-circle-thin fa-stack-2x"></i>
       <i [ngClass]="cssIcon"></i>
     </span>
   </div>
   <div class="stat-body">
-    <div class="stat-nom">{{nomStat}}</div>
+    <div class="stat-nom" [ngStyle]="{'color': couleur}">{{nomStat}}</div>
     <div class="stat-value">
       <span>{{isPourcentage ? (valeurPourcentage | number:'1.0-2') + ' %' : valeur | number:'1.0-0'}}</span>
       <span [hidden]="!valeurPourcentageSecondaire || !isPourcentage"> / {{(valeurPourcentageSecondaire | number:'1.0-2') + ' %'}}</span>

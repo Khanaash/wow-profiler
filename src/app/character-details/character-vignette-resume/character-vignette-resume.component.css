@@ -1,32 +1,83 @@
 .vignette-personnage {
-  margin-bottom: 5px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin: 0px 10px 10px;
+  height: 150px;
+  border-radius: 5%;
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  box-shadow: 0px 0px 6px;
+  -moz-box-shadow: 0px 0px 6px;
+  -webkit-box-shadow: 0px 0px 6px;
+  -o-box-shadow: 0px 0px 6px;
+  overflow: hidden;
+}
+
+.vignette-personnage-avatar {
+  flex: 0 0 65px;
+  position: relative;
+  border-bottom: 1px solid #404040;
+  margin-bottom: 10px;
 }
 
 .vignette-personnage-avatar > img {
-  float: left;
-  border: 1px black solid;
-  border-radius: 15%;
-  -moz-border-radius: 15%;
-  -webkit-border-radius: 15%;
-  width: 48px;
-  height: 48px;
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+  border: 2px #242222 solid;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+}
+.vignette-personnage-avatar > div.background-portrait {
+  content: ' ';
+  position: absolute;
+  bottom: -14px;
+  left: calc(10% - 4px);
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 68px;
+  height: 68px;
+  z-index: 1;
+  border: 2px solid #242222;
+}
+
+.vignette-personnage-avatar div.vignette-personnage-avatar-ilvl-hf {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vignette-personnage-avatar-ilvl-hf div {
+  font-weight: 600;
 }
 
 .vignette-personnage-body {
-  padding-left: 5px;
   flex-grow: 1;
+  padding: 5px;
 }
 
 .vignette-personnage-body-nom {
   font-weight: 700;
-  align-self: center;
-  text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+}
+
+.vignette-personnage-body-classe {
+  font-weight: 400;
+  font-size: 90%;
 }
 
 .vignette-personnage-heure {
-  margin-left: auto;
+  padding: 5px;
   font-style: italic;
   font-size: 75%;
   font-weight: 700;

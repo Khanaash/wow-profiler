@@ -29,12 +29,13 @@ export class PersonnageHistoriqueService {
       historiquePersonnagesConsultes.splice(indexToRemove, 1);
     }
 
-    if (historiquePersonnagesConsultes.length > 9) {
+    if (historiquePersonnagesConsultes.length > 11) {
       historiquePersonnagesConsultes = historiquePersonnagesConsultes.slice(historiquePersonnagesConsultes.length - 9, historiquePersonnagesConsultes.length);
     }
 
     historiquePersonnagesConsultes.push(new PersonnageReminder(personnage.nom, personnage.niveau, personnage.serveur,
-      personnage.getClasseLibelle(), personnage.imagePortrait, personnage.classeInfos.colorCss));
+      personnage.getClasseLibelle(), personnage.imagePortrait, personnage.classeInfos.colorCss,
+      personnage.items.ilvlEquipe, personnage.pointsHautFaits));
     localStorage.setItem(LocalstorageConstants.PERSONNAGES_HISTORIQUE, JSON.stringify(historiquePersonnagesConsultes));
   }
 

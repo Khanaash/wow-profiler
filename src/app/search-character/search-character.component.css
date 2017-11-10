@@ -13,3 +13,13 @@
 .input-group-multi-input .form-control.realm-char-select {
   width: 45%;
 }
+
+.vignettes-personnage-historique {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.vignettes-personnage-historique > div {
+  width: calc(100%/4);
+}
