@@ -4,7 +4,7 @@
   </div>
   <ng-template #itemSlot>
     <a class="wowheadTooltip" [href]="getItemWowHeadUrlRelation()">
-      <div class="item-icon" [style.background-image]="'url(' + getIconItemUrl + ')'" [style.border-color]="item.qualite.colorCss"></div>
+      <div class="item-icon" [style.background-image]="'url(' + item.getIconItem56Pixel() + ')'" [style.border-color]="item.qualite.colorCss"></div>
     </a>
     <div class="item-info-primaire">
       <span class="item-nom" [style.color]="item.qualite.colorCss">
@@ -14,10 +14,7 @@
       </span>
       <div>
         <span class="item-ilvl">
-          {{item.ilvl}}&nbsp;-&nbsp;
-        </span>
-        <span class="item-type">
-          {{item.typeSlot}}
+          {{item.ilvl}}
         </span>
       </div>
     </div>

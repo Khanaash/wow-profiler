@@ -15,11 +15,10 @@
 }
 
 .item-icon {
-  width: 60px;
-  height: 60px;
+  width: 36px;
+  height: 36px;
   border: 2px solid;
   background-size: cover;
-  border-radius: 6px;
 }
 
 .item-info-primaire {
@@ -35,10 +34,6 @@
 
 .item-right .item-info-primaire span {
   float: right;
-}
-
-.item-type {
-  color: #000000;
 }
 
 .item-ilvl {

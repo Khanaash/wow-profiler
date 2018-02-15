@@ -120,11 +120,19 @@ export class Personnage implements Serializable<Personnage> {
   }
 
   public getClasseLibelle(): string {
-    return this.isFeminin() && typeof this.classeInfos.nomFemininAffichage !== 'undefined' ? this.classeInfos.nomFemininAffichage : this.classeInfos.nomAffichage;
+    if (this.classeInfos == null) {
+      return '';
+    } else {
+      return this.isFeminin() && typeof this.classeInfos.nomFemininAffichage !== 'undefined' ? this.classeInfos.nomFemininAffichage : this.classeInfos.nomAffichage;
+    }
   }
 
   public getRaceLibelle(): string {
-    return this.isFeminin() && typeof this.race.nomFemininAffichage !== 'undefined' ? this.race.nomFemininAffichage : this.race.nomAffichage;
+    if (this.race == null) {
+      return '';
+    } else {
+      return this.isFeminin() && typeof this.race.nomFemininAffichage !== 'undefined' ? this.race.nomFemininAffichage : this.race.nomAffichage;
+    }
   }
 
   public isHorde(): boolean {

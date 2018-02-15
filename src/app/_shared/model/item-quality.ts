@@ -26,6 +26,10 @@ export const ITEM_RARITY_CONFIG: ItemQuality[] = [
   {
     numero: 6,
     colorCss: '#E5CC80',
+  },
+  {
+    numero: 7,
+    colorCss: '#00CCFF',
   }
 ];
 

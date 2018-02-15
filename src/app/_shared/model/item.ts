@@ -1,4 +1,5 @@
 import {ITEM_RARITY_CONFIG, ItemQuality} from "./item-quality";
+import {environment} from "environments/environment";
 export class Item implements Serializable<Item> {
   id: number;
   nom: string;
@@ -41,4 +42,17 @@ export class Item implements Serializable<Item> {
 
     return this;
   }
+
+  public getIconItem18Pixel(): string {
+    return `${environment.baseUrlBlizzardRenderIcons18Px}/${this.nomIcon}.jpg`;
+  }
+
+  public getIconItem36Pixel(): string {
+    return `${environment.baseUrlBlizzardRenderIcons36Px}/${this.nomIcon}.jpg`;
+  }
+
+  public getIconItem56Pixel(): string {
+    return `${environment.baseUrlBlizzardRenderIcons56Px}/${this.nomIcon}.jpg`;
+  }
+
 }

@@ -16,10 +16,6 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  get getIconItemUrl(): string {
-    return `${environment.baseUrlBlizzardRenderIcons56Px}/${this.item.nomIcon}.jpg`;
-  }
-
   public getItemWowHeadUrlRelation(): string {
     let urlWowHead = `http://www.wowhead.com/item=${this.item.id}&domain=fr`;
     if (this.item.enchantId != null) {
