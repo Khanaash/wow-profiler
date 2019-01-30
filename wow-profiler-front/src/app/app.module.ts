@@ -1,7 +1,6 @@
 import {BrowserModule} from "@angular/platform-browser";
 import {NgModule} from "@angular/core";
 import {FormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
 
 import {AppComponent} from "app/app.component";
 import {SearchCharacterComponent} from "app/search-character/search-character.component";
@@ -14,29 +13,34 @@ import {ServeurService} from "app/_shared/services/serveur.service";
 import {PersonnageResolver} from "app/character-details/personnage-resolver.service";
 import {PersonnageHistoriqueService} from "app/_shared/services/personnage-historique.service";
 import {CharacterVignetteResumeComponent} from "app/character-details/character-vignette-resume/character-vignette-resume.component";
+import {AccessGuardGuard} from "app/_shared/guard/access-guard.guard";
+import {TokenService} from "app/_shared/services/token.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SearchCharacterComponent,
-    PageNotFoundComponentComponent,
-    CharacterVignetteResumeComponent
-  ],
-  imports: [
-    // generic modules
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    // custom modules
-    CharacterDetailsModule,
-    AppRouterModule
-  ],
-  providers: [
-    CharacterService,
-    ServeurService,
-    PersonnageHistoriqueService,
-    PersonnageResolver
-  ],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		SearchCharacterComponent,
+		PageNotFoundComponentComponent,
+		CharacterVignetteResumeComponent
+	],
+	imports: [
+		// generic modules
+		BrowserModule,
+		FormsModule,
+		HttpClientModule,
+		// custom modules
+		CharacterDetailsModule,
+		AppRouterModule
+	],
+	providers: [
+		CharacterService,
+		ServeurService,
+		PersonnageHistoriqueService,
+		PersonnageResolver,
+		AccessGuardGuard,
+		TokenService
+	],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

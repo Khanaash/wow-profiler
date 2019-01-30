@@ -47,5 +47,5 @@
 
 .item-empty {
   border-color: grey;
-  background-image: url("/src/assets/item-icons-empty.png");
+  background-image: url("/assets/item-icons-empty.png");
 }

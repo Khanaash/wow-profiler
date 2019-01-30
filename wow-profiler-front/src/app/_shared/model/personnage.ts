@@ -4,7 +4,6 @@ import {Classe, CLASSE_CONFIG} from "./classe";
 import {Race, RACE_CONFIG} from "./race";
 import {Items} from "./items";
 import {Specialisation} from "app/_shared/model/specialisation";
-import {current} from "codelyzer/util/syntaxKind";
 import {StatistiqueDisplayer} from "app/_shared/model/statistique-displayer";
 
 export class Personnage implements Serializable<Personnage> {
